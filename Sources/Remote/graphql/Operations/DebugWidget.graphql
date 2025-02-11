@@ -1,0 +1,3 @@
+query DebugWidget($id: ID!, $type: String, $hostname: String, $port: String) {
+    debugWidget(id: $id, type: $type, hostname: $hostname, port: $port)
+}

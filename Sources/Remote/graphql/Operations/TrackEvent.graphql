@@ -1,0 +1,43 @@
+mutation TrackEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput) {
+    addEvent(anonymousID: $anonymousId, name: $name, sourceID: $sourceId, primaryData: $primaryData) {
+        triggerInfo {
+            activate
+            surveyId
+            activateParam {
+                delay
+            }
+            customizationParam {
+                overlay {
+                    active
+                    color
+                    blur {
+                        active
+                        number
+                    }
+                }
+            }
+        }
+    }
+}
+
+mutation TrackCustomEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput, $customName: String!, $customData: JSON) {
+    addCustomEvent(anonymousID: $anonymousId, name: $name, sourceID: $sourceId, primaryData: $primaryData, customName: $customName, customData: $customData) {
+        triggerInfo {
+            activate
+            surveyId
+            activateParam {
+                delay
+            }
+            customizationParam {
+                overlay {
+                    active
+                    color
+                    blur {
+                        active
+                        number
+                    }
+                }
+            }
+        }
+    }
+}

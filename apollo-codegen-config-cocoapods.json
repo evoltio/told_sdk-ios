@@ -1,0 +1,32 @@
+{
+    "schemaNamespace" : "ToldAPI",
+    "options" : {
+        "cocoapodsCompatibleImportStatements" : true
+    },
+    "input" : {
+        "operationSearchPaths" : [
+            "Sources/Remote/graphql/Operations/*.graphql"
+        ],
+        "schemaSearchPaths" : [
+            "Sources/Remote/graphql/schema.graphqls"
+        ]
+    },
+    "output" : {
+        "testMocks" : {
+            "none" : {
+            }
+        },
+        "schemaTypes" : {
+            "path" : "Sources/Remote/Generated/",
+            "moduleType" : {
+                "embeddedInTarget" : {
+                    "name" : "ToldAPI"
+                }
+            }
+        },
+        "operations" : {
+            "inSchemaModule" : {
+            }
+        }
+    }
+}

@@ -1,0 +1,5397 @@
+"""
+Banking account number is a string of 5 to 17 alphanumeric values for representing an generic account number
+"""
+scalar AccountNumber
+
+"""
+The `BigInt` scalar type represents non-fractional signed whole numeric values.
+"""
+scalar BigInt
+
+"""
+The `Byte` scalar type represents byte value as a Buffer
+"""
+scalar Byte
+
+"""
+A country code as defined by ISO 3166-1 alpha-2
+"""
+scalar CountryCode
+
+"""
+A country name (short name) as defined by ISO 3166-1
+"""
+scalar CountryName
+
+"""
+A field whose value conforms to the standard cuid format as specified in https://github.com/ericelliott/cuid#broken-down
+"""
+scalar Cuid
+
+"""
+A field whose value is a Currency: https://en.wikipedia.org/wiki/ISO_4217.
+"""
+scalar Currency
+
+"""
+Custom Date scalar type
+"""
+scalar Date
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.This scalar is serialized to a string in ISO 8601 format and parsed from a string in ISO 8601 format.
+"""
+scalar DateTimeISO
+
+"""
+A field whose value conforms to the standard DeweyDecimal format as specified by the OCLC https://www.oclc.org/content/dam/oclc/dewey/resources/summaries/deweysummaries.pdf
+"""
+scalar DeweyDecimal
+
+"""
+A field whose value conforms to the standard DID format as specified in did-core: https://www.w3.org/TR/did-core/.
+"""
+scalar DID
+
+"""
+    A string representing a duration conforming to the ISO8601 standard,
+    such as: P1W1DT13H23M34S
+    P is the duration designator (for period) placed at the start of the duration representation.
+    Y is the year designator that follows the value for the number of years.
+    M is the month designator that follows the value for the number of months.
+    W is the week designator that follows the value for the number of weeks.
+    D is the day designator that follows the value for the number of days.
+    T is the time designator that precedes the time components of the representation.
+    H is the hour designator that follows the value for the number of hours.
+    M is the minute designator that follows the value for the number of minutes.
+    S is the second designator that follows the value for the number of seconds.
+
+    Note the time designator, T, that precedes the time value.
+
+    Matches moment.js, Luxon and DateFns implementations
+    ,/. is valid for decimal places and +/- is a valid prefix
+  
+"""
+scalar Duration
+
+"""
+A field whose value conforms to the standard internet email address format as specified in HTML Spec: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address.
+"""
+scalar EmailAddress
+
+"""
+A GeoJSON object as defined by RFC 7946: https://datatracker.ietf.org/doc/html/rfc7946
+"""
+scalar GeoJSON
+
+"""
+A field whose value is a generic Universally Unique Identifier: https://en.wikipedia.org/wiki/Universally_unique_identifier.
+"""
+scalar GUID
+
+"""
+A field whose value is a hexadecimal: https://en.wikipedia.org/wiki/Hexadecimal.
+"""
+scalar Hexadecimal
+
+"""
+A field whose value is a hex color code: https://en.wikipedia.org/wiki/Web_colors.
+"""
+scalar HexColorCode
+
+"""
+A field whose value is a CSS HSL color: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla().
+"""
+scalar HSL
+
+"""
+A field whose value is a CSS HSLA color: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla().
+"""
+scalar HSLA
+
+"""
+A field whose value is an International Bank Account Number (IBAN): https://en.wikipedia.org/wiki/International_Bank_Account_Number.
+"""
+scalar IBAN
+
+"""
+A field whose value is either an IPv4 or IPv6 address: https://en.wikipedia.org/wiki/IP_address.
+"""
+scalar IP
+
+"""
+A field whose value is an IPC Class Symbol within the International Patent Classification System: https://www.wipo.int/classifications/ipc/en/
+"""
+scalar IPCPatent
+
+"""
+A field whose value is a IPv4 address: https://en.wikipedia.org/wiki/IPv4.
+"""
+scalar IPv4
+
+"""
+A field whose value is a IPv6 address: https://en.wikipedia.org/wiki/IPv6.
+"""
+scalar IPv6
+
+"""
+A field whose value is a ISBN-10 or ISBN-13 number: https://en.wikipedia.org/wiki/International_Standard_Book_Number.
+"""
+scalar ISBN
+
+"""
+    A string representing a duration conforming to the ISO8601 standard,
+    such as: P1W1DT13H23M34S
+    P is the duration designator (for period) placed at the start of the duration representation.
+    Y is the year designator that follows the value for the number of years.
+    M is the month designator that follows the value for the number of months.
+    W is the week designator that follows the value for the number of weeks.
+    D is the day designator that follows the value for the number of days.
+    T is the time designator that precedes the time components of the representation.
+    H is the hour designator that follows the value for the number of hours.
+    M is the minute designator that follows the value for the number of minutes.
+    S is the second designator that follows the value for the number of seconds.
+
+    Note the time designator, T, that precedes the time value.
+
+    Matches moment.js, Luxon and DateFns implementations
+    ,/. is valid for decimal places and +/- is a valid prefix
+  
+"""
+scalar ISO8601Duration
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSONObject
+
+"""
+A field whose value is a JSON Web Token (JWT): https://jwt.io/introduction.
+"""
+scalar JWT
+
+"""
+A field whose value is a valid decimal degrees latitude number (53.471): https://en.wikipedia.org/wiki/Latitude
+"""
+scalar Latitude
+
+"""
+A field whose value conforms to the Library of Congress Subclass Format ttps://www.loc.gov/catdir/cpso/lcco/
+"""
+scalar LCCSubclass
+
+"""
+A local date string (i.e., with no associated timezone) in `YYYY-MM-DD` format, e.g. `2020-01-01`.
+"""
+scalar LocalDate
+
+"""
+A local date-time string (i.e., with no associated timezone) in `YYYY-MM-DDTHH:mm:ss` format, e.g. `2020-01-01T00:00:00`.
+"""
+scalar LocalDateTime
+
+"""
+The locale in the format of a BCP 47 (RFC 5646) standard string
+"""
+scalar Locale
+
+"""
+A local time string (i.e., with no associated timezone) in 24-hr `HH:mm[:ss[.SSS]]` format, e.g. `14:25` or `14:25:06` or `14:25:06.123`.  This scalar is very similar to the `LocalTime`, with the only difference being that `LocalEndTime` also allows `24:00` as a valid value to indicate midnight of the following day.  This is useful when using the scalar to represent the exclusive upper bound of a time block.
+"""
+scalar LocalEndTime
+
+"""
+A local time string (i.e., with no associated timezone) in 24-hr `HH:mm[:ss[.SSS]]` format, e.g. `14:25` or `14:25:06` or `14:25:06.123`.
+"""
+scalar LocalTime
+
+"""
+The `BigInt` scalar type represents non-fractional signed whole numeric values.
+"""
+scalar Long
+
+"""
+A field whose value is a valid decimal degrees longitude number (53.471): https://en.wikipedia.org/wiki/Longitude
+"""
+scalar Longitude
+
+"""
+A field whose value is a IEEE 802 48-bit MAC address: https://en.wikipedia.org/wiki/MAC_address.
+"""
+scalar MAC
+
+"""
+Floats that will have a value less than 0.
+"""
+scalar NegativeFloat
+
+"""
+Integers that will have a value less than 0.
+"""
+scalar NegativeInt
+
+"""
+A string that cannot be passed as an empty value
+"""
+scalar NonEmptyString
+
+"""
+Floats that will have a value of 0 or more.
+"""
+scalar NonNegativeFloat
+
+"""
+Integers that will have a value of 0 or more.
+"""
+scalar NonNegativeInt
+
+"""
+Floats that will have a value of 0 or less.
+"""
+scalar NonPositiveFloat
+
+"""
+Integers that will have a value of 0 or less.
+"""
+scalar NonPositiveInt
+
+"""
+A field whose value conforms with the standard mongodb object ID as described here: https://docs.mongodb.com/manual/reference/method/ObjectId/#ObjectId. Example: 5e5677d71bdc2ae76344968c
+"""
+scalar ObjectID
+
+"""
+A field whose value conforms to the standard E.164 format as specified in: https://en.wikipedia.org/wiki/E.164. Basically this is +17895551234.
+"""
+scalar PhoneNumber
+
+"""
+A field whose value is a valid TCP port within the range of 0 to 65535: https://en.wikipedia.org/wiki/Transmission_Control_Protocol#TCP_ports
+"""
+scalar Port
+
+"""
+Floats that will have a value greater than 0.
+"""
+scalar PositiveFloat
+
+"""
+Integers that will have a value greater than 0.
+"""
+scalar PositiveInt
+
+"""
+A field whose value conforms to the standard postal code formats for United States, United Kingdom, Germany, Canada, France, Italy, Australia, Netherlands, Spain, Denmark, Sweden, Belgium, India, Austria, Portugal, Switzerland or Luxembourg.
+"""
+scalar PostalCode
+
+"""
+A field whose value is a CSS RGB color: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba().
+"""
+scalar RGB
+
+"""
+A field whose value is a CSS RGBA color: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba().
+"""
+scalar RGBA
+
+"""
+In the US, an ABA routing transit number (`ABA RTN`) is a nine-digit code to identify the financial institution.
+"""
+scalar RoutingNumber
+
+"""
+The `SafeInt` scalar type represents non-fractional signed whole numeric values that are considered safe as defined by the ECMAScript specification.
+"""
+scalar SafeInt
+
+"""
+A field whose value is a Semantic Version: https://semver.org
+"""
+scalar SemVer
+
+"""
+A field whose value conforms to the standard personal number (personnummer) formats for Sweden
+"""
+scalar SESSN
+
+"""
+A time string at UTC, such as 10:15:30Z, compliant with the `full-time` format outlined in section 5.6 of the RFC 3339profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar Time
+
+"""
+The javascript `Date` as integer. Type represents date and time as number of milliseconds from start of UNIX epoch.
+"""
+scalar Timestamp
+
+"""
+A field whose value exists in the standard IANA Time Zone Database: https://www.iana.org/time-zones
+"""
+scalar TimeZone
+
+"""
+Floats that will have a value of 0 or more.
+"""
+scalar UnsignedFloat
+
+"""
+Integers that will have a value of 0 or more.
+"""
+scalar UnsignedInt
+
+"""
+A field whose value conforms to the standard URL format as specified in RFC3986: https://www.ietf.org/rfc/rfc3986.txt.
+"""
+scalar URL
+
+"""
+A currency string, such as $21.25
+"""
+scalar USCurrency
+
+"""
+A field whose value is a UTC Offset: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+"""
+scalar UtcOffset
+
+"""
+A field whose value is a generic Universally Unique Identifier: https://en.wikipedia.org/wiki/Universally_unique_identifier.
+"""
+scalar UUID
+
+"""
+Represents NULL values
+"""
+scalar Void
+
+"""
+The `Upload` scalar type represents a file upload.
+"""
+scalar Upload
+
+enum DefaultSortEnum {
+  asc
+
+  desc
+}
+
+type Query {
+  _empty: String
+
+  getImprovedQuestion(question: String!, language: String!, questionType: String!, surveyId: ID!): [String]
+
+  getImprovedDescription(question: String!, description: String!, questionType: String!, language: String!, surveyId: ID!): [String]
+
+  getCerebroSuggestions(questionId: ID, questionKind: String, surveyId: ID!, language: String!, amount: Int!): SuggestionOutput!
+
+  getWebhookEventType(id: ID!): WebhookEventType
+
+  getWebhookEventTypeByKey(key: String!): WebhookEventType
+
+  getWebhookEventTypeByGroups(groups: [String]): [WebhookEventType]
+
+  getAllWebhookEventType: [WebhookEventType]
+
+  getWebhookEvent(id: ID!): WebhookEvent
+
+  getAllWebhookEvent(webhook: ID!, offset: Int, limit: Int): [WebhookEvent]
+
+  getWebhooks(appID: ID!): [Webhook]
+
+  me: UserDetailed
+
+  getMyId: String
+
+  isValidUserToken(language: Language): TokenValid
+
+  userCount: Int!
+
+  getUserList(offset: Int, limit: Int, sort: UserListSort, search: [UserListSearch]): UserList
+
+  getAllUsers: [UserData]
+
+  getUser(id: ID!): UserData
+
+  searchUser(search: String): [UserData]
+
+  getFile(id: ID!): File
+
+  getFilePublicByData(id: ID!): FilePublic
+
+  getMyFiles: [File]
+
+  getFilesByKind(type: String!): [File]
+
+  getFileByData(id: ID!): File
+
+  getLastCommentTimeByData(data: ID!): Float
+
+  getFileFromAccessCode(accessCode: String!): File
+
+  getFileType(id: ID!): FileType
+
+  getFileTypeByKey(name: String!): FileType
+
+  getAllFileType: [FileType]
+
+  getMyFileType: [FileType]
+
+  getFileList(offset: Int, limit: Int, sort: FileListSort): FileList!
+
+  getSurveyTypesCount: [SurveyTypeCount]
+
+  getFilesCountsByTypeAndStatus: [FileStatusCountsByType]
+
+  getAllImage: [Image]
+
+  getMyImages: [Image]
+
+  getMyPublicImages: [Image]
+
+  getImageByLink(link: String!): Image
+
+  getImageData(link: String!): String
+
+  getImageById(id: ID!): Image
+
+  getSurvey(id: ID!): Survey
+
+  getHiddenFieldValues(sourceID: ID!, key: String!): [String]
+
+  checkIfCanUseWidgetWithSurvey(surveyID: ID!, hostname: String, port: String, preview: Boolean, os: String, mobileApp: String): CanUseSurvey
+
+  getTeamsSurveysForAdmin(id: ID!, limit: Int, offset: Int): SurveyTeamAdmin
+
+  checkIfSurveyStepsAreCompleted(surveyID: ID!): SurveySteps
+
+  getSurveyCountAnswerBlocked(id: ID!): Int
+
+  checkIfURLIsInSurveyData(surveyID: ID!, url: String!): Boolean
+
+  getSurveyQuestion(id: ID!, surveyAuthorID: ID, withoutOtherChoice: Boolean): SurveyQuestion
+
+  getSurveyQuestionWithNavigationType(id: ID!, surveyAuthorID: ID, preview: Boolean, hiddenFields: [SurveyHiddenFieldInput]): SurveyQuestionWithNavigation
+
+  getNextSurveyQuestion(surveyID: ID!, questionID: ID, surveyAuthorID: ID, preview: Boolean, deviceType: DeviceType, hiddenFields: [SurveyHiddenFieldInput]): SurveyQuestionWithNavigation
+
+  getPreviousSurveyQuestion(surveyID: ID!, questionID: ID, surveyAuthorID: ID, preview: Boolean): SurveyQuestionWithNavigation
+
+  getFirstSurveyQuestion(surveyID: ID!, surveyAuthorID: ID, preview: Boolean, deviceType: DeviceType, hiddenFields: [SurveyHiddenFieldInput]): SurveyQuestionWithNavigation
+
+  getAllSurveyQuestion(surveyID: ID!, surveyAuthorID: ID, getAllChoices: Boolean): [SurveyQuestion]
+
+  getSurveyQuestionContactInfoField(id: ID!): SurveyQuestionContactInfoField
+
+  getSurveyQuestionContactInfoFieldOfQuestion(questionId: ID!): [SurveyQuestionContactInfoField]
+
+  getSurveyQuestionChoices(questionID: ID!): [SurveyChoice]
+
+  getSurveyAnswer(id: ID!): SurveyAnswer
+
+  getMySurveyAnswersOfQuestion(questionId: ID!, surveyAuthorID: ID!, preview: Boolean): [SurveyAnswer]
+
+  getSurveyAuthor(id: ID!): SurveyAuthorPopulated
+
+  getSurveyAuthorWithAnswers(sourceAuthorId: ID!): [SurveyAuthorWithAnswers]
+
+  getAllSurveyAuthor(surveyID: ID!): [SurveyAuthor]
+
+  getSurveyAuthorOfReport(reportID: ID!, filters: [FilterInput], offset: Int, limit: Int): [SurveyAuthorPopulated]
+
+  getMySurveyAuthor(anonymousID: UUID, surveyID: ID, preview: Boolean, language: String): SurveyAuthor
+
+  getSurveyReportList(surveyID: ID!): [SurveyReport]
+
+  getSurveyReport(id: ID, surveyID: ID, forceUpdate: Boolean): SurveyReport
+
+  getSurveyReportWithSections(id: ID, surveyID: ID, forceUpdate: Boolean, noLimit: Boolean): SurveyReportWithSections
+
+  getPublicSurveyReportWithSections(id: ID, surveyID: ID, forceUpdate: Boolean): SurveyReportWithSections
+
+  getSurveyReportOfAuthor(surveyID: ID!, authorID: ID!): ReportOfAuthor
+
+  getSurveyReportOfAllAuthor(id: ID, surveyID: ID, filters: [FilterInput], offset: Int, limit: Int): [SurveyOfAllAuthor]
+
+  asAccessToReport(id: ID, surveyID: ID!): Boolean
+
+  getSourceAuthor(id: ID!): SourceAuthor
+
+  getSourceAuthorFromSurveyAuthor(surveyAuthorID: ID!): SourceAuthor
+
+  getAllSourceAuthor(sourceID: ID!): [SourceAuthor]
+
+  getSourceAuthorFieldValue(sourceID: ID!, field: String!, offset: Int, limit: Int, sort: DefaultSortEnum, search: String): [String]
+
+  getSurveyReportSections(surveyReportID: ID!): [SurveyReportSection]
+
+  getSurveyReportSectionsForExport(surveyReportID: ID!): [SurveyReportSection]
+
+  getAllSurveyReportSectionAnswers(surveyReportSectionID: ID!, filters: [FilterInput]): [SurveyReportAnswer]
+
+  getSurveyTriggers(surveyID: ID!): [SurveyTrigger]
+
+  getEverySurveyAvailableToBeTriggered(folderID: ID!, hostname: String, port: String, type: String!, navigator: String, language: String, country: String, device: String, listReplied: [SurveyReplied], preview: Boolean, version: String, os: String, mobileApp: String): [SurveyTrigger]
+
+  getSurveyTriggerWhen(surveyID: ID!): SurveyTriggerWhen
+
+  getSurveyTriggerWho(surveyID: ID!): SurveyTriggerWho
+
+  getPublicLinkData(fileID: ID!): PublicLinkData
+
+  isSourceExists(id: ID!): Boolean
+
+  getFolder(id: ID!): Folder
+
+  getElemInProject(teamID: ID, id: ID, searchOptions: SearchInput, sortOptions: SortInput, page: Int, limit: Int): [ElemProject]
+
+  getFilesFromProject(id: ID!): [File]
+
+  getProjectsFromTeam(teamID: ID!): [Folder]
+
+  getFolderBySurvey(surveyID: ID!): Folder
+
+  getFolderList(offset: Int, limit: Int): ListFolderAdmin
+
+  countSourcesType: SourcesType
+
+  debugWidget(id: ID!, type: String, mobileApp: String, os: String, hostname: String, port: String): String
+
+  getAppLink(id: ID!): AppLink
+
+  getAppLinksFromFolder(folderId: ID!): [AppLink]
+
+  getAdminTemplates(offset: Int, limit: Int, sort: TemplateListSort, filters: [TemplateListFilter]): Templates
+
+  getTemplate(id: ID!): Template
+
+  getAdminTemplate(id: ID!): Template
+
+  getTemplates(tags: [ID], languages: [String], type: String, onboarding: Boolean): [Template]
+
+  getMyNotifications(teamID: ID!, page: Int): [Notification]
+
+  checkIfTeamsAsNotification: [NotificationTeam]
+
+  checkIfTeamAsSubscriptions(teamID: ID!): Boolean
+
+  getClientAppFromProject(projectID: ID!): [ClientApp]
+
+  getClientAppByTeamAdmin(teamID: ID!): [ClientApp]
+
+  checkIfAppIsAllowed(sourceID: ID!, url: ClientAppWebInput, mobile: ClientAppMobileInput, preview: Boolean): CheckIfAppIsAllowed
+
+  getTeams(offset: Int, limit: Int, sort: TeamListSort, filters: [TeamListFilter]): Teams
+
+  getTeam(id: ID!): Team
+
+  getUserTeams: [Team]
+
+  getUserTeamsByAdmin(userId: ID!): [Team]
+
+  isUserInTeam: Boolean
+
+  retrieveCurrentTeam(id: ID): ID
+
+  getTeamSubscription(id: ID!): StripePlan
+
+  getTeamUsage(id: ID!, surveyId: ID): TeamUsage
+
+  getTeamCustomerPortalSession(id: ID!, returnUrl: String!, configId: stripePortalSessionConfig): String
+
+  countTeamsWithInstalledApps: Int
+
+  getTeamsFilesCount: [TeamsFilesCount!]!
+
+  getTeamsCountByPlan: [TeamsCountByPlan]
+
+  getTeamsWithFirstFileDate: [TeamWithFirstFileDate]
+
+  getTeamsWithToldInstalledCount: [TeamWithToldInstalled]
+
+  getTeamUsageData(id: ID!, replyOnly: Boolean, date: FilterDate, listSurveyToNoShow: [String]): TeamUsageData
+
+  getTeamSurveysAndSources(id: ID!): [SurveyAndSources]
+
+  getTeamBySurvey(surveyID: ID!): ID
+
+  getRoleByProject(projectID: ID!): RoleTeam
+
+  getRoleByTeam(teamID: ID, fileID: ID): RoleTeam
+
+  getRoleBySurvey(surveyID: ID!): RoleTeam
+
+  getPlan(id: ID!): Plan
+
+  getTeamPlan(teamID: ID, fileID: ID): Plan
+
+  getAllPlan: [Plan]
+
+  checkIfCanPublishSurvey(surveyID: ID!): ResultCheckActivationSurvey
+
+  checkIfCanCreateSurvey(teamID: ID!): FileData
+
+  canAccessToFeatureByName(teamID: ID, fileID: ID, name: String!): Boolean
+
+  getFeature(id: ID!): Feature
+
+  getAllFeatures(isInBeta: Boolean): [Feature]
+
+  getFeaturesByTeam(id: ID!): [Feature]
+
+  getTags(text: String, limit: Int): [Tag]
+
+  getEvent(id: ID!): Event
+
+  getSourceAuthorEvent(sourceAuthorId: ID!, offset: Int, limit: Int): [Event]
+
+  getCustomEventName(sourceID: ID!, offset: Int, limit: Int, sort: DefaultSortEnum, search: String): [String]
+
+  getCustomEventValue(sourceID: ID!, name: String!, field: String!, offset: Int, limit: Int, sort: DefaultSortEnum, search: String): [String]
+
+  getListEvents(sourceID: ID!, offset: Int, limit: Int, filters: EventFilters): [Event]
+
+  getActivationGraph: ActivationGraph
+
+  getEmailSettings: EmailSettings
+
+  getAudience(id: ID!): Audience
+
+  getSourceAudiences(sourceID: ID!): [Audience]
+
+  getFilterTypes: [FilterType]
+
+  getSourceAuthorField(sourceID: ID!): ConfigCustomData
+
+  getCompanySourceAuthorField(sourceID: ID!): ConfigCustomData
+
+  getCompanySourceAuthorFieldValue(sourceID: ID!, field: String!): [String]
+
+  getCustomEventField(sourceID: ID!, name: String!): ConfigCustomData
+}
+
+type Mutation {
+  _empty: String
+
+  translateSurvey(surveyId: ID!, currentLanguage: String!, nextLanguage: String!): Boolean
+
+  validateCerebroSuggestions(surveyId: ID, questionId: ID, language: String!, content: ValidateContent): Boolean
+
+  sendWebhookTest(webhookID: ID!, testName: String): WebhookEvent
+
+  addWebhook(appID: ID!, name: String, url: String!, eventTypes: [ID], active: Boolean): Webhook
+
+  editWebhook(webhookID: ID!, name: String, url: String, eventTypes: [ID], active: Boolean): Webhook
+
+  removeWebhook(webhookID: ID!): Boolean
+
+  getAuthor(anonymousID: UUID, hiddenFields: [hiddenFieldInput]): Author!
+
+  signup(email: String!, password: String!, firstName: String, lastName: String, language: String, unsubscribed: Boolean): UserToken
+
+  login(email: String!, password: String!): UserToken
+
+  googleLogin(code: String!): UserToken
+
+  googleSignup(code: String!, language: String, unsubscribed: Boolean): UserToken
+
+  updateProfil(profile: ProfileInput, email: String, language: Language): UserDetailed
+
+  updatePassword(oldPassword: String!, newPassword: String!): Boolean
+
+  deleteAccount: Boolean
+
+  verifiedUser(code: String!): Boolean
+
+  sendVerifiedEmail(language: String): Boolean
+
+  sendResetPassword(email: String!, emailLanguage: String): Boolean
+
+  resetAndUpdatePassword(key: String!, newPassword: String!): Boolean
+
+  createUserFromBackOffice(profile: ProfileInput, email: String!, password: String!, language: String): UserData
+
+  adminLogin(email: String!, password: String!): String
+
+  editUser(id: ID!, profile: ProfileInput, email: String, password: String): UserData
+
+  deleteUser(id: ID!): Boolean
+
+  deleteUsersByEmail(list: [String]!): Boolean
+
+  createFile(name: String!, fileTypeId: ID!, folderId: ID): File
+
+  createFileFromTemplate(templateId: ID!, folderId: ID, language: String): File
+
+  duplicateFileFromAdmin(id: ID!, userID: ID!): File
+
+  duplicateFile(id: ID!): File
+
+  deleteFile(id: ID!): Boolean
+
+  renameFile(id: ID!, name: String!): File
+
+  setPublicLink(id: ID!, value: Boolean!, password: String): File
+
+  setPublicReports(id: ID!, active: Boolean!, password: String): File
+
+  checkPasswordFile(id: ID!, password: String!): Boolean
+
+  checkPasswordReports(id: ID!, password: String!): Boolean
+
+  moveFile(id: ID!, folderId: ID): File
+
+  createPreviewFileFromTemplate(templateId: ID!, folderId: ID, dataID: ID): File
+
+  deleletePreviewFileFromTemplate(id: ID!): Boolean
+
+  updateFileType(id: ID!, name: String!, available: Boolean!): FileType
+
+  uploadImages(files: [Upload!]!): [Image!]!
+
+  uploadPublicImages(files: [Upload!]!): [Image!]
+
+  deleteImage(link: String!): Boolean
+
+  createSurveyFile(fileName: String!, folderId: ID, type: String, language: String): File
+
+  updateSurvey(id: ID!, type: String, customization: SurveyCustomizationInput, options: SurveyOptionsInput, welcomeMessage: SurveyWelcomeMessageInput, thankyouMessage: SurveyThankyouMessageInput, audiences: [ID], additionalFilters: [FilterInput], triggerConfig: SurveyTriggerConfigInput): Survey
+
+  activeSurveyLanguage(id: ID!, language: String!): Survey
+
+  desactiveSurveyLanguage(id: ID!, language: String!): Survey
+
+  setDefaultSurveyLanguage(id: ID!, language: String!): Survey
+
+  generateSurveyRandomData(id: ID!, nbUsers: Int, randomHiddenField: Boolean, beginDate: Date, endDate: Date, useAi: Boolean): Survey
+
+  cleanPreviewData(id: ID!, surveyAuthorID: ID!): ProcessingCleanData
+
+  addSurveyQuestionChoice(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], options: SurveyQuestionChoiceOptionsInput): SurveyQuestionChoice
+
+  addSurveyQuestionContactInfo(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], fields: [SurveyQuestionContactInfoFieldInput], options: SurveyQuestionContactInfoOptionsInput): SurveyQuestionContactInfo
+
+  addSurveyQuestionCalendar(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], options: SurveyQuestionCalendarOptionsInput, iframeSource: String, iframeUrl: String): SurveyQuestionCalendar
+
+  addSurveyQuestionLegal(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], file: String): SurveyQuestionLegal
+
+  addSurveyQuestionMessage(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], color: String, button: SurveyQuestionMessageButtonInput): SurveyQuestionMessage
+
+  addSurveyQuestionOpen(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], type: String, options: SurveyQuestionOpenOptionsInput): SurveyQuestionOpen
+
+  addSurveyQuestionOpinion(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], displayType: displayTypeSurveyQuestionOpinion, stepLength: Int, labels: [[SurveyContentWithLanguageInput]], options: SurveyQuestionOpinionOptionsInput): SurveyQuestionOpinion
+
+  addSurveyQuestionNPS(surveyID: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], stepLength: Int, labels: [[SurveyContentWithLanguageInput]], options: SurveyQuestionNPSOptionsInput): SurveyQuestionNPS
+
+  editSurveyQuestionChoice(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], options: SurveyQuestionChoiceOptionsInput, customButtons: CustomButtonsInput): SurveyQuestionChoice
+
+  editSurveyQuestionContactInfo(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], options: SurveyQuestionContactInfoOptionsInput, customButtons: CustomButtonsInput): SurveyQuestionContactInfo
+
+  editSurveyQuestionCalendar(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], options: SurveyQuestionCalendarOptionsInput, iframeSource: String, iframeUrl: String, customButtons: CustomButtonsInput): SurveyQuestionCalendar
+
+  editSurveyQuestionLegal(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], file: String, customButtons: CustomButtonsInput): SurveyQuestionLegal
+
+  editSurveyQuestionMessage(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], color: String, options: SurveyQuestionMessageOptionsInput, button: SurveyQuestionMessageButtonInput, customButtons: CustomButtonsInput): SurveyQuestionMessage
+
+  editSurveyQuestionOpen(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], type: String, options: SurveyQuestionOpenOptionsInput, customButtons: CustomButtonsInput): SurveyQuestionOpen
+
+  editSurveyQuestionOpinion(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], displayType: displayTypeSurveyQuestionOpinion, stepLength: Int, labels: [[SurveyContentWithLanguageInput]], options: SurveyQuestionOpinionOptionsInput, customButtons: CustomButtonsInput): SurveyQuestionOpinion
+
+  editSurveyQuestionNPS(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, content: [SurveyContentWithLanguageInput], desc: [SurveyContentWithLanguageInput], stepLength: Int, labels: [[SurveyContentWithLanguageInput]], goal: Int, startAt: Int, options: SurveyQuestionNPSOptionsInput, customButtons: CustomButtonsInput): SurveyQuestionNPS
+
+  editSurveyQuestion(id: ID!, position: Int, condition: SurveyConditionInput, media: SurveyQuestionMediaInput, confidentiality: SurveyQuestionConfidentialityInput, customButtons: CustomButtonsInput): SurveyQuestion
+
+  cleanSurveyQuestionPosition(list: [SurveyQuestionPosition]): Boolean
+
+  duplicateSurveyQuestion(id: ID!): SurveyQuestion
+
+  deleteSurveyQuestion(id: ID!): Boolean
+
+  createSurveyQuestionContactInfoField(questionId: ID!, data: SurveyQuestionContactInfoFieldInput!): SurveyQuestionContactInfoField
+
+  updateSurveyQuestionContactInfoField(id: ID!, data: SurveyQuestionContactInfoFieldUpdateInput): SurveyQuestionContactInfoField
+
+  removeSurveyQuestionContactInfoField(id: ID!): Boolean
+
+  createOtherChoiceText(questionID: ID!, content: [SurveyContentWithLanguageInput], anonymousID: UUID, preview: Boolean): SurveyChoiceText
+
+  addSurveyChoiceText(questionID: ID!, content: [SurveyContentWithLanguageInput], position: Int): SurveyChoiceText
+
+  updateSurveyChoiceText(id: ID!, content: [SurveyContentWithLanguageInput], position: Int): SurveyChoiceText
+
+  duplicateSurveyChoice(id: ID!): SurveyChoice
+
+  deleteSurveyChoice(id: ID!): Boolean
+
+  addSurveyAnswer(surveyAuthorID: ID!, preview: Boolean, question: ID, responseTime: Float, language: String): SurveyAnswerResponse
+
+  addSurveyAnswerChoice(surveyAuthorID: ID!, preview: Boolean, choices: [ID], question: ID, responseTime: Float, language: String): SurveyAnswerResponse
+
+  addSurveyAnswerText(surveyAuthorID: ID!, preview: Boolean, field: ID, question: ID, content: String, responseTime: Float, language: String): SurveyAnswerResponse
+
+  addSurveyAnswerNumber(surveyAuthorID: ID!, preview: Boolean, field: ID, question: ID, content: Int, responseTime: Float, language: String): SurveyAnswerResponse
+
+  addSurveyAnswerCalendar(surveyAuthorID: ID!, preview: Boolean, booked: Boolean, question: ID, responseTime: Float, language: String): SurveyAnswerResponse
+
+  addMultiSurveyAnswer(surveyAuthorID: ID!, preview: Boolean, question: ID, responseTime: Float, language: String, textAnswers: [AnswerTextInput], numberAnswers: [AnswerNumberInput]): MultiSurveyAnswerResponse
+
+  deleteMyPreviewSurveyAnswer(surveyID: ID!, surveyAuthorID: ID!): Boolean
+
+  deleteUserAllSurveyAnswer(surveyID: ID!, authorID: String!): Boolean
+
+  updateSurveyAuthorConfidentiality(surveyAuthorID: ID!, preview: Boolean, questionID: ID, status: SurveyAuthorConfidentialityStatus!): SurveyAuthor
+
+  surveyAuthorHasRedirect(surveyAuthorID: ID!, preview: Boolean): SurveyAuthor
+
+  addSurveyReport(surveyID: ID!, cover: SurveyReportCoverInput, color: SurveyReportColorInput, title: String, filters: [FilterInput], sections: [SurveyReportSectionUpdateInput], iconColor: String): SurveyReportWithSections
+
+  saveSurveyReport(id: ID!, cover: SurveyReportCoverInput, color: SurveyReportColorInput, title: String, filters: [FilterInput], sections: [SurveyReportSectionUpdateInput], iconColor: String): SurveyReportWithSections
+
+  updateSurveyReport(id: ID!, cover: SurveyReportCoverInput, color: SurveyReportColorInput, title: String, filters: [FilterInput], iconColor: String, isPublic: Boolean): SurveyReport
+
+  getCalcSurveyReport(id: ID, surveyID: ID, conditionType: AudienceConditionType, filters: [FilterInput]): ProcessingSurveyReportWithSections
+
+  duplicateSurveyReport(id: ID!): SurveyReport
+
+  deleteSurveyReport(id: ID!): Boolean
+
+  downloadSurveyReportExcel(id: ID, surveyID: ID, filters: [FilterInput], conditionType: AudienceConditionType): ProcessingDownloadSurveyReportExcel
+
+  updateHiddenFieldsSourceAuthor(id: ID!, hiddenFields: JSON!): SourceAuthor
+
+  identifySourceAuthor(id: ID!, customData: JSON!): SourceAuthor
+
+  identifySourceAuthorByAnonymousID(anonymousID: UUID!, sourceID: ID!, customData: JSON!): UUID
+
+  deleteSourceAuthor(ids: [String!]!): Boolean
+
+  updateReportSection(id: ID!, graphType: String, display: Boolean): SurveyReportSection
+
+  addSurveyTriggerURL(surveyID: ID!): SurveyTriggerURL
+
+  addSurveyTriggerScreen(surveyID: ID!): SurveyTriggerScreen
+
+  addSurveyTriggerClick(surveyID: ID!, variable: String, value: String): SurveyTriggerClick
+
+  addSurveyTriggerCustomEvent(surveyID: ID!, variable: String, value: String, conditions: [SurveyTriggerCustomEventConditionInput]): SurveyTriggerCustomEvent
+
+  editSurveyTriggerURL(id: ID!, onAllUrl: Boolean, onLoadPage: Boolean, scroll: SurveyTriggerURLScrollInput, delay: SurveyTriggerDelayInput, condition: SurveyTriggerURLConditionInput): SurveyTriggerURL
+
+  editSurveyTriggerScreen(id: ID!, onAllScreen: Boolean, onLoadScreen: Boolean, delay: SurveyTriggerDelayInput, condition: SurveyTriggerURLConditionInput): SurveyTriggerScreen
+
+  editSurveyTriggerClick(id: ID!, variable: String, value: String): SurveyTriggerClick
+
+  editSurveyTriggerCustomEvent(id: ID!, eventName: String, conditions: [SurveyTriggerCustomEventConditionInput]): SurveyTriggerCustomEvent
+
+  deleteSurveyTrigger(id: ID!): Boolean
+
+  addSurveyTriggerWhen(surveyID: ID!): SurveyTriggerWhen
+
+  editSurveyTriggerWhen(id: ID!, period: SurveyTriggerWhenPeriodInput, recurrency: SurveyTriggerWhenRecurrencyInput, seeItOnlyOnce: Boolean, replyOnlyOnce: Boolean): SurveyTriggerWhen
+
+  addSurveyTriggerWho(surveyID: ID!): SurveyTriggerWho
+
+  editSurveyTriggerWho(id: ID!, publicPercent: Int, os: [String], versions: SurveyTriggerWhoVersionsInput, devices: [String], navigators: [String], languages: SurveyTriggerWhoLanguagesInput, countries: SurveyTriggerWhoCountriesInput): SurveyTriggerWho
+
+  modifyComment(fileID: ID!, createdAt: Float!, value: String!): PublicLinkData
+
+  deleteComment(fileID: ID!, createdAt: Float!): PublicLinkData
+
+  addReaction(fileID: ID!, type: publicLinkDataReactionType, value: Int): PublicLinkData
+
+  setPublicLinkModule(fileID: ID!, type: publicLinkDataModules, value: Boolean): PublicLinkData
+
+  createFolder(name: String!, teamID: ID!, type: String, hostname: String, tag: String, os: String, subType: String): Folder
+
+  editFolder(id: ID!, type: String, tag: String, name: String, optionsEvent: JSON): Folder
+
+  duplicateFolder(id: ID!): Folder
+
+  deleteFolder(id: ID!): Boolean
+
+  renameFolder(id: ID!, name: String!): Folder
+
+  createAppLink(name: String!, link: String!, folderId: ID!): AppLink
+
+  deleteAppLink(id: ID!): Boolean
+
+  renameAppLink(id: ID!, name: String!): AppLink
+
+  createAdminTemplate(title: String!, image: String, desc: String!, fileID: ID!, tags: [ID], language: [String], link: TemplateLinkInput): Template
+
+  editAdminTemplate(id: ID!, published: Boolean, title: String, image: String, desc: String, fileID: ID, tags: [ID], language: [String], link: TemplateLinkInput, onboarding: Boolean): Template
+
+  deleteAdminTemplate(id: ID!): Boolean
+
+  addNotificationUpdateTold(link: String!): Boolean
+
+  updateSeenNotifications(id: ID, team: ID): Boolean
+
+  createStripeSession(priceId: ID!, teamID: ID!): String!
+
+  addClientAppToProject(hostname: String, mobile: ClientAppMobileInput, projectID: ID!): ClientApp
+
+  deleteClientApp(id: ID!): Boolean
+
+  createTeam(name: String!, image: String, listEmail: [String], moreInfos: MoreInfosTeamInput): Team
+
+  updateTeam(id: ID!, name: String, image: String): Team
+
+  editTeamByAdmin(id: ID!, name: String, plan: ID): Team
+
+  inviteToTeam(id: ID!, list: [String]!, roleName: roleTeamName!): Team
+
+  inviteToTeamByAdmin(id: ID!, email: String, roleName: roleTeamName!): Team
+
+  changeRoleInTeam(id: ID!, list: [String]!, roleName: roleTeamName!): Team
+
+  disinviteToTeam(id: ID!, list: [String]!): Team
+
+  disinviteToTeamByAdmin(id: ID!, email: String!): Team
+
+  leaveTeam(id: ID!): Team
+
+  deleteTeam(id: ID!): Boolean
+
+  updateViewStatus(id: ID!): Boolean
+
+  changeTeamPlan(id: ID!, planId: ID!, stripePlanId: String, source: String, vatNumber: String): Boolean
+
+  editPlan(id: ID!, name: String, defaultPlan: Boolean, viewsLimit: Int, repliesLimit: Int, usersLimit: Int, sourceLimit: Int, fileLimit: Int, questionLimit: Int, trialDays: Int, features: [FeatureInput]): Plan
+
+  createPlan(name: String!, viewsLimit: Int, repliesLimit: Int, usersLimit: Int): Plan
+
+  deletePlan(id: ID!): Boolean
+
+  createFeature(name: String!, isInBeta: Boolean): Feature
+
+  editFeature(id: ID!, isInBeta: Boolean): Feature
+
+  addBetaFeatureToTeam(id: ID!, teamID: ID!): Boolean
+
+  removeBetaFeatureToTeam(id: ID!, teamID: ID!): Boolean
+
+  deleteFeature(id: ID!): Boolean
+
+  createTag(text: String!, templateID: ID): Tag
+
+  deleteTagByName(name: String!): Boolean
+
+  addEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput): EventData
+
+  addClickEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, classNames: [String], htmlId: String, text: String): EventData
+
+  addCustomEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, customName: String!, customData: JSON): EventData
+
+  addDelayEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, delayValue: Int): EventData
+
+  addScrollEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, scrollValue: Int): EventData
+
+  updateEmailSettings(id: ID!, unsubscribed: Boolean, list: [EmailSourceInput]): EmailSettings
+
+  createAudience(sourceID: ID!, name: String, color: Int, conditionType: AudienceConditionType, filters: [FilterInput]): Audience
+
+  duplicateAudience(id: ID!): Audience
+
+  editAudience(id: ID!, name: String, color: Int, conditionType: AudienceConditionType, filters: [FilterInput]): Audience
+
+  deleteAudience(id: ID!): Boolean
+
+  calcAudience(id: ID!, conditionType: AudienceConditionType, filters: [FilterInput], offset: Int, limit: Int, sort: CalcAudienceSort, search: [CalcAudienceSearch]): ProcessingAudience
+}
+
+type Subscription {
+  _empty: String
+
+  onWebhookManageEvent(appID: ID!): WebhookManageEvent
+
+  userStatus: String
+
+  onEditUserProfile(id: ID!): UserDetailed
+
+  fileEventSubscription(teamID: ID!, folderID: ID): FileEvent
+
+  fileEventSubscriptionById(id: ID!): FileEvent
+
+  lastCommentTimeByDataSubscription(data: ID!): Float
+
+  imageEventSubscription: ImageEvent
+
+  onSurveyUpdated(id: ID!): Survey
+
+  onSurveyStepsUpdated(surveyID: ID!): SurveySteps
+
+  onSurveyQuestionEvent(surveyID: ID!): SurveyQuestionEvent
+
+  onSurveyQuestionUpdate(id: ID!): SurveyQuestion
+
+  onSurveyQuestionContactInfoFieldEvent(questionID: ID!): SurveyQuestionContactInfoFieldEvent
+
+  onSurveyChoiceEvent(questionID: ID!): SurveyChoiceEvent
+
+  onSurveyAuthorUpdated(surveyId: ID!): SurveyAuthor
+
+  onSurveyReportEvent(surveyID: ID!): SurveyReportEvent
+
+  onSurveyReportUpdated(id: ID!): SurveyReportWithSections
+
+  onSurveyReportCalcProcessed(id: ID!): ProcessingSurveyReportWithSections
+
+  onDownloadSurveyReportExcel(id: ID!): ProcessingDownloadSurveyReportExcel
+
+  onSourceAuthorUpdated(surveyId: ID!): SourceAuthor
+
+  onSurveyReportSectionUpdated(surveyReportID: ID!): [SurveyReportSection]
+
+  modificationPublicLinkData(fileID: ID!): PublicLinkData
+
+  folderEventSubscription(teamID: ID!): FolderEvent
+
+  sourceTriggerUpdateSubscription(sourceID: ID!): Boolean
+
+  appLinkEventSubscription(folderId: ID!): AppLinkEvent
+
+  onNewNotification: Notification
+
+  onUpdateNotification: Notification
+
+  onClientAppUpdated(projectID: ID!): ClientApp
+
+  onEventAdded(sourceID: ID!): Event
+
+  onAudienceCalcProcessed(id: ID!): ProcessingAudience
+}
+
+type OpenQuestion {
+  question: String!
+
+  description: String!
+
+  choices: [String]
+}
+
+type SuggestionOutput {
+  suggestions: [OpenQuestion]
+
+  questionType: String
+}
+
+input ChoicesInput {
+  content: String
+}
+
+input ValidateContent {
+  title: String
+
+  description: String
+
+  choices: [ChoicesInput]
+
+  questionKind: String
+}
+
+type WebhookEventType {
+  id: ID!
+
+  key: String!
+
+  group: [String]
+
+  callType: [String]
+}
+
+type WebhookEvent {
+  id: ID!
+
+  eventType: WebhookEventType!
+
+  data: String
+
+  callType: String
+}
+
+type Webhook {
+  id: ID!
+
+  name: String
+
+  url: String!
+
+  eventTypes: [WebhookEventType]
+
+  active: Boolean
+}
+
+enum WebhookManageEventType {
+  add
+
+  update
+
+  delete
+}
+
+type WebhookManageEvent {
+  event: WebhookManageEventType!
+
+  userId: ID
+
+  webhook: Webhook
+}
+
+type Author {
+  id: ID!
+
+  user: ID
+
+  anonymousID: UUID
+}
+
+enum Language {
+  fr
+
+  en
+}
+
+type Profile {
+  lastName: String!
+
+  firstName: String!
+
+  image: String
+}
+
+input ProfileInput {
+  lastName: String!
+
+  firstName: String!
+
+  image: String
+}
+
+type User {
+  id: ID!
+
+  profile: Profile!
+
+  language: String
+
+  email: String!
+
+  verified: Boolean
+
+  status: String
+}
+
+type UserDetailed {
+  id: ID!
+
+  profile: Profile!
+
+  language: String
+
+  email: String!
+
+  verified: Boolean
+
+  status: String
+
+  socialAccounts: Boolean
+}
+
+type PublicUser {
+  profile: Profile!
+
+  email: String!
+}
+
+type TokenValid {
+  valid: Boolean!
+
+  newToken: String
+}
+
+type UserToken {
+  token: String
+
+  user: UserDetailed
+
+  currentTeam: ID
+}
+
+type UserData {
+  id: ID!
+
+  profile: Profile!
+
+  email: String!
+
+  createdAt: Float
+
+  language: String
+
+  verified: Boolean
+}
+
+enum FieldUserListSort {
+  name
+
+  email
+
+  plan
+
+  status
+
+  createdAt
+}
+
+enum TypeUserListSort {
+  asc
+
+  desc
+}
+
+input UserListSort {
+  field: FieldUserListSort
+
+  typeSort: TypeUserListSort
+}
+
+input UserListSearch {
+  field: FieldUserListSort
+
+  value: String
+}
+
+type UserList {
+  offset: Int
+
+  limit: Int
+
+  total: Int
+
+  data: [UserData]
+}
+
+enum accessType {
+  admin
+
+  member
+
+  viewer
+
+  public
+}
+
+type PublicLinkConfig {
+  active: Boolean
+
+  password: String
+
+  accessCode: String
+}
+
+type PublicReportsConfig {
+  active: Boolean
+
+  password: String
+}
+
+type PublicReportsConfigHidden {
+  active: Boolean
+
+  password: Boolean
+}
+
+type PublicLinkConfigHidden {
+  active: Boolean
+
+  password: Boolean
+}
+
+type File {
+  id: ID!
+
+  preview: Boolean
+
+  name: String!
+
+  fileType: FileType
+
+  data: ID
+
+  publicLink: PublicLinkConfig
+
+  publicReports: PublicReportsConfig
+
+  folder: ID
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  toldie: String
+}
+
+type FilePublic {
+  id: ID!
+
+  name: String!
+
+  preview: Boolean
+
+  fileType: FileType
+
+  data: ID
+
+  publicLink: PublicLinkConfigHidden
+
+  publicReports: PublicReportsConfigHidden
+
+  accessMode: accessType
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  folder: ID
+}
+
+enum typeEvent {
+  create
+
+  modify
+
+  delete
+
+  move
+}
+
+type FileEvent {
+  event: typeEvent!
+
+  file: File
+}
+
+type FileType {
+  id: ID!
+
+  name: String!
+
+  key: String!
+
+  picture: String
+
+  available: Boolean!
+}
+
+type FileData {
+  id: ID!
+
+  createdAt: Float
+
+  name: String
+
+  surveyType: String
+
+  can: Boolean
+
+  fileLimit: Int
+
+  count: Int
+}
+
+enum FieldFileListSort {
+  name
+
+  createdAt
+}
+
+enum TypeFileListSort {
+  asc
+
+  desc
+}
+
+input FileListSort {
+  field: FieldFileListSort
+
+  typeSort: TypeFileListSort
+}
+
+type FileList {
+  offset: Int
+
+  limit: Int
+
+  total: Int
+
+  data: [FileData]
+}
+
+type SurveyTypeCount {
+  surveyType: String!
+
+  count: Int
+}
+
+type FileStatusCountsByType {
+  surveyType: String!
+
+  activeCount: Int
+
+  inactiveCount: Int
+}
+
+type Image {
+  link: String!
+
+  title: String
+
+  tags: [String]
+
+  private: Boolean
+
+  upload: Boolean
+
+  pub: Boolean
+
+  width: Int
+
+  height: Int
+}
+
+type ImageEvent {
+  event: typeEvent!
+
+  image: Image
+}
+
+type SurveyTeamAdminItem {
+  id: ID!
+
+  name: String
+
+  type: String
+
+  nbViews: Int
+
+  nbAnswers: Int
+
+  nbUsersStarted: Int
+
+  nbUsersEnded: Int
+}
+
+type SurveyTeamAdmin {
+  surveys: [SurveyTeamAdminItem]
+
+  total: Int
+}
+
+type SurveyContentWithLanguage {
+  value: String
+
+  language: String!
+}
+
+input SurveyContentWithLanguageInput {
+  value: String
+
+  language: String!
+}
+
+type SurveyMessageWelcomeOptions {
+  active: Boolean
+
+  hideLogo: Boolean
+
+  customButton: Boolean
+}
+
+input SurveyMessageWelcomeOptionsInput {
+  active: Boolean
+
+  hideLogo: Boolean
+
+  customButton: Boolean
+}
+
+type SurveyMessageThankyouOptions {
+  active: Boolean
+
+  confettiActive: Boolean
+
+  hideLogo: Boolean
+
+  customButton: Boolean
+}
+
+input SurveyMessageThankyouOptionsInput {
+  active: Boolean
+
+  confettiActive: Boolean
+
+  hideLogo: Boolean
+
+  customButton: Boolean
+}
+
+type SurveyMessageMedia {
+  image: String
+
+  video: String
+
+  link: String
+
+  fit: Boolean
+}
+
+input SurveyMessageMediaInput {
+  image: String
+
+  video: String
+
+  link: String
+
+  fit: Boolean
+}
+
+type SurveyWelcomeMessage {
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  button: [SurveyContentWithLanguage]
+
+  media: SurveyMessageMedia
+
+  options: SurveyMessageWelcomeOptions
+}
+
+type SurveyThankyouMessage {
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  button: [SurveyContentWithLanguage]
+
+  media: SurveyMessageMedia
+
+  options: SurveyMessageThankyouOptions
+}
+
+input SurveyWelcomeMessageInput {
+  content: [SurveyContentWithLanguageInput]
+
+  desc: [SurveyContentWithLanguageInput]
+
+  button: [SurveyContentWithLanguageInput]
+
+  media: SurveyMessageMediaInput
+
+  options: SurveyMessageWelcomeOptionsInput
+}
+
+input SurveyThankyouMessageInput {
+  content: [SurveyContentWithLanguageInput]
+
+  desc: [SurveyContentWithLanguageInput]
+
+  button: [SurveyContentWithLanguageInput]
+
+  media: SurveyMessageMediaInput
+
+  options: SurveyMessageThankyouOptionsInput
+}
+
+type SurveyCover {
+  logo: String
+
+  image: String
+
+  hideLogo: Boolean
+}
+
+input SurveyCoverInput {
+  logo: String
+
+  image: String
+
+  hideLogo: Boolean
+}
+
+type SurveyAvatar {
+  image: String
+
+  active: Boolean
+
+  name: String
+}
+
+input SurveyAvatarInput {
+  image: String
+
+  active: Boolean
+
+  name: String
+}
+
+type SurveyGradient {
+  color: String
+
+  animated: Boolean
+
+  active: Boolean
+}
+
+input SurveyGradientInput {
+  color: String
+
+  animated: Boolean
+
+  active: Boolean
+}
+
+type SurveyOverlayBlur {
+  number: Int
+
+  active: Boolean
+}
+
+type SurveyOverlay {
+  active: Boolean
+
+  color: String
+
+  blur: SurveyOverlayBlur
+}
+
+input SurveyOverlayBlurInput {
+  number: Int
+
+  active: Boolean
+}
+
+input SurveyOverlayInput {
+  active: Boolean
+
+  color: String
+
+  blur: SurveyOverlayBlurInput
+}
+
+type SurveyCustomization {
+  cover: SurveyCover
+
+  activeColor: String
+
+  avatar: SurveyAvatar
+
+  fullScreen: Boolean
+
+  gradient: SurveyGradient
+
+  theme: String
+
+  positionX: Int
+
+  positionY: Int
+
+  blockClosing: Boolean
+
+  branding: Boolean
+
+  overlay: SurveyOverlay
+}
+
+input SurveyCustomizationInput {
+  cover: SurveyCoverInput
+
+  activeColor: String
+
+  avatar: SurveyAvatarInput
+
+  fullScreen: Boolean
+
+  gradient: SurveyGradientInput
+
+  theme: String
+
+  option: SurveyOptionsInput
+
+  positionX: Int
+
+  positionY: Int
+
+  blockClosing: Boolean
+
+  branding: Boolean
+
+  overlay: SurveyOverlayInput
+}
+
+type SurveyOptions {
+  oneTestPerUser: Boolean
+
+  seeItOnlyOnce: Boolean
+
+  webhooks: [ID]
+}
+
+input SurveyOptionsInput {
+  oneTestPerUser: Boolean
+
+  seeItOnlyOnce: Boolean
+}
+
+type ConfigHiddenField {
+  key: String
+}
+
+enum SurveyLanguageStatus {
+  OK
+
+  MissTrad
+
+  MissCalendarUrl
+}
+
+type SurveySteps {
+  installSource: Boolean
+
+  addQuestion: Boolean
+
+  setupTriggers: Boolean
+}
+
+type SurveyLanguageStatusWithLanguage {
+  language: String!
+
+  status: SurveyLanguageStatus
+}
+
+type SurveyLanguage {
+  language: String!
+
+  default: Boolean
+
+  status: SurveyLanguageStatus
+
+  welcomeMessageStatus: SurveyLanguageStatus
+
+  thankyouMessageStatus: SurveyLanguageStatus
+}
+
+type CanUseSurvey {
+  canUse: Boolean
+
+  overlay: SurveyOverlay
+}
+
+type SurveyTriggerDelayConfig {
+  value: Int
+
+  active: Boolean
+}
+
+input SurveyTriggerDelayConfigInput {
+  value: Int
+
+  active: Boolean
+}
+
+type SurveyTriggerScrollConfig {
+  value: Int
+
+  active: Boolean
+}
+
+input SurveyTriggerScrollConfigInput {
+  value: Int
+
+  active: Boolean
+}
+
+input SurveyTriggerConfigInput {
+  audiencePercent: Int
+}
+
+type SurveyTriggerConfig {
+  audiencePercent: Int
+}
+
+type Survey {
+  id: ID!
+
+  type: String
+
+  welcomeMessage: SurveyWelcomeMessage
+
+  thankyouMessage: SurveyThankyouMessage
+
+  customization: SurveyCustomization
+
+  options: SurveyOptions
+
+  condition: Boolean
+
+  length: Int
+
+  configHiddenFields: [ConfigHiddenField]
+
+  languages: [SurveyLanguage]
+
+  audiences: [ID]
+
+  additionalFilters: [Filter]
+
+  triggerConfig: SurveyTriggerConfig
+}
+
+type ProcessingCleanData {
+  jobId: String
+
+  status: String
+}
+
+type SurveyQuestionMedia {
+  image: String
+
+  video: String
+
+  link: String
+
+  fit: Boolean
+}
+
+input SurveyQuestionMediaInput {
+  image: String
+
+  video: String
+
+  link: String
+
+  fit: Boolean
+}
+
+enum SurveyConditionValueType {
+  equal
+
+  notEqual
+
+  any
+
+  asAnswered
+
+  asNotAnswered
+}
+
+enum SurveyConditionValueResultType {
+  thankyou
+
+  question
+
+  link
+
+  close
+}
+
+enum SurveyConditionValueLinkType {
+  open
+
+  replace
+}
+
+type SurveyConditionValue {
+  choices: [ID]
+
+  content: [Int]
+
+  conditionType: SurveyConditionValueType!
+
+  resultType: SurveyConditionValueResultType!
+
+  linkType: SurveyConditionValueLinkType
+
+  link: String
+
+  timeoutLink: Int
+
+  result: ID
+}
+
+type SurveyConditionOtherWise {
+  resultType: SurveyConditionValueResultType
+
+  linkType: SurveyConditionValueLinkType
+
+  link: String
+
+  timeoutLink: Int
+
+  result: ID
+}
+
+type SurveyCondition {
+  active: Boolean
+
+  value: [SurveyConditionValue]
+
+  otherwise: SurveyConditionOtherWise
+}
+
+input SurveyConditionValueInput {
+  choices: [ID]
+
+  content: [Int]
+
+  conditionType: SurveyConditionValueType!
+
+  resultType: SurveyConditionValueResultType!
+
+  linkType: SurveyConditionValueLinkType
+
+  link: String
+
+  timeoutLink: Int
+
+  result: ID
+}
+
+input SurveyConditionOtherWiseInput {
+  resultType: SurveyConditionValueResultType!
+
+  linkType: SurveyConditionValueLinkType
+
+  link: String
+
+  timeoutLink: Int
+
+  result: ID
+}
+
+input SurveyConditionInput {
+  active: Boolean
+
+  value: [SurveyConditionValueInput]
+
+  otherwise: SurveyConditionOtherWiseInput
+}
+
+input CustomButtonsInput {
+  active: Boolean
+
+  prevButton: [SurveyContentWithLanguageInput]
+
+  nextButton: [SurveyContentWithLanguageInput]
+}
+
+type SurveyQuestionConfidentiality {
+  active: Boolean
+
+  link: [SurveyContentWithLanguage]
+}
+
+input SurveyQuestionConfidentialityInput {
+  link: [SurveyContentWithLanguageInput]
+}
+
+type CustomButtons {
+  active: Boolean
+
+  prevButton: [SurveyContentWithLanguage]
+
+  nextButton: [SurveyContentWithLanguage]
+}
+
+interface SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+}
+
+type SurveyQuestionChoiceOptions {
+  mandatory: Boolean
+
+  multiple: Boolean
+
+  otherChoice: Boolean
+
+  shuffle: Boolean
+}
+
+input SurveyQuestionChoiceOptionsInput {
+  mandatory: Boolean
+
+  multiple: Boolean
+
+  otherChoice: Boolean
+
+  shuffle: Boolean
+}
+
+type SurveyQuestionChoice implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  choices: [SurveyChoice]
+
+  options: SurveyQuestionChoiceOptions
+}
+
+type SurveyQuestionContactInfoOptions {
+  mandatory: Boolean
+}
+
+input SurveyQuestionContactInfoOptionsInput {
+  mandatory: Boolean
+}
+
+type SurveyQuestionContactInfo implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  fields: [SurveyQuestionContactInfoField]
+
+  options: SurveyQuestionContactInfoOptions
+}
+
+type SurveyQuestionLegal implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  file: String
+}
+
+input SurveyQuestionMessageOptionsInput {
+  otherChoice: Boolean
+
+  otherField: Boolean
+}
+
+type SurveyQuestionMessageOptions {
+  otherChoice: Boolean
+
+  otherField: Boolean
+}
+
+input SurveyQuestionMessageButtonInput {
+  link: String
+
+  label: [SurveyContentWithLanguageInput]
+
+  show: Boolean
+}
+
+type SurveyQuestionMessageButton {
+  link: String
+
+  label: [SurveyContentWithLanguage]
+
+  show: Boolean
+}
+
+type SurveyQuestionMessage implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  color: String
+
+  button: SurveyQuestionMessageButton
+
+  options: SurveyQuestionMessageOptions
+}
+
+type SurveyQuestionOpenOptions {
+  mandatory: Boolean
+}
+
+input SurveyQuestionOpenOptionsInput {
+  mandatory: Boolean
+}
+
+type SurveyQuestionOpen implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  type: String
+
+  options: SurveyQuestionOpenOptions
+}
+
+type SurveyQuestionOpinionOptions {
+  mandatory: Boolean
+
+  withLabels: Boolean
+
+  animation: Boolean
+
+  csat: Boolean
+}
+
+input SurveyQuestionOpinionOptionsInput {
+  mandatory: Boolean
+
+  withLabels: Boolean
+
+  animation: Boolean
+
+  csat: Boolean
+}
+
+enum displayTypeSurveyQuestionOpinion {
+  emoji
+
+  number
+
+  star
+
+  weather
+}
+
+type SurveyQuestionOpinion implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  displayType: displayTypeSurveyQuestionOpinion!
+
+  stepLength: Int
+
+  labels: [[SurveyContentWithLanguage]]
+
+  options: SurveyQuestionOpinionOptions
+}
+
+type SurveyQuestionNPSOptions {
+  mandatory: Boolean
+
+  withLabels: Boolean
+}
+
+input SurveyQuestionNPSOptionsInput {
+  mandatory: Boolean
+
+  withLabels: Boolean
+}
+
+type SurveyQuestionNPS implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  stepLength: Int
+
+  labels: [[SurveyContentWithLanguage]]
+
+  goal: Int
+
+  startAt: Int
+
+  options: SurveyQuestionNPSOptions
+}
+
+type SurveyQuestionCalendarOptions {
+  otherField: Boolean
+}
+
+input SurveyQuestionCalendarOptionsInput {
+  otherField: Boolean
+}
+
+type SurveyQuestionCalendar implements SurveyQuestion {
+  id: ID!
+
+  kind: String
+
+  position: Int
+
+  condition: SurveyCondition
+
+  media: SurveyQuestionMedia
+
+  survey: String
+
+  content: [SurveyContentWithLanguage]
+
+  desc: [SurveyContentWithLanguage]
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  confidentiality: SurveyQuestionConfidentiality
+
+  customButtons: CustomButtons
+
+  iframeSource: String
+
+  iframeUrl: String
+
+  options: SurveyQuestionCalendarOptions
+}
+
+type AdditionalSurveyQuestionEventData {
+  oldPosition: Int
+}
+
+enum SurveyQuestionTypeEvent {
+  add
+
+  update
+
+  move
+
+  delete
+}
+
+type SurveyQuestionEvent {
+  event: SurveyQuestionTypeEvent!
+
+  userId: ID
+
+  question: SurveyQuestion!
+
+  additionalData: AdditionalSurveyQuestionEventData
+}
+
+enum SurveyQuestionWithNavigationType {
+  welcome
+
+  thankyou
+
+  question
+
+  link
+
+  close
+}
+
+type SurveyQuestionLinkOptions {
+  linkType: SurveyConditionValueLinkType
+
+  link: String
+
+  timeoutLink: Int
+}
+
+type SurveyQuestionWithNavigation {
+  answer: [SurveyAnswer]
+
+  question: SurveyQuestion
+
+  type: SurveyQuestionWithNavigationType
+
+  linkOptions: SurveyQuestionLinkOptions
+}
+
+input SurveyQuestionPosition {
+  id: ID!
+
+  position: Int
+}
+
+input SurveyHiddenFieldInput {
+  key: String
+
+  value: String
+}
+
+enum SurveyQuestionContactInfoFieldType {
+  userInfo
+
+  companyInfo
+
+  otherInfo
+
+  email
+
+  phoneNumber
+
+  socialMediaUrl
+
+  website
+
+  url
+
+  multipleChoice
+
+  singleChoice
+}
+
+type SurveyQuestionContactInfoFieldChoice {
+  position: Int
+
+  label: [SurveyContentWithLanguage]
+}
+
+input SurveyQuestionContactInfoFieldChoiceInput {
+  position: Int
+
+  label: [SurveyContentWithLanguageInput]
+}
+
+input SurveyQuestionContactInfoFieldInput {
+  position: Int
+
+  label: [SurveyContentWithLanguageInput]
+
+  fieldType: SurveyQuestionContactInfoFieldType!
+
+  fieldChoices: [SurveyQuestionContactInfoFieldChoiceInput]
+}
+
+input SurveyQuestionContactInfoFieldUpdateInput {
+  position: Int
+
+  required: Boolean
+
+  label: [SurveyContentWithLanguageInput]
+
+  fieldChoices: [SurveyQuestionContactInfoFieldChoiceInput]
+}
+
+type SurveyQuestionContactInfoField {
+  id: ID!
+
+  position: Int
+
+  required: Boolean
+
+  label: [SurveyContentWithLanguage]
+
+  fieldType: SurveyQuestionContactInfoFieldType!
+
+  fieldChoices: [SurveyQuestionContactInfoFieldChoice]
+
+  surveyQuestion: ID
+}
+
+enum SurveyQuestionContactInfoFieldTypeEvent {
+  add
+
+  update
+
+  move
+
+  delete
+}
+
+type AdditionalSurveyQuestionContactInfoFieldEventData {
+  oldPosition: Int
+}
+
+type SurveyQuestionContactInfoFieldEvent {
+  event: SurveyQuestionContactInfoFieldTypeEvent!
+
+  field: SurveyQuestionContactInfoField!
+
+  additionalData: AdditionalSurveyQuestionContactInfoFieldEventData
+}
+
+interface SurveyChoice {
+  id: ID!
+
+  position: Int
+
+  kind: String
+
+  surveyQuestion: ID!
+
+  otherChoice: Boolean
+
+  hidden: Boolean
+
+  author: ID
+
+  preview: Boolean
+
+  surveyAuthor: SurveyAuthor
+
+  updatedAt: Float
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+}
+
+type SurveyChoiceText implements SurveyChoice {
+  id: ID!
+
+  position: Int
+
+  kind: String
+
+  surveyQuestion: ID!
+
+  otherChoice: Boolean
+
+  hidden: Boolean
+
+  author: ID
+
+  preview: Boolean
+
+  surveyAuthor: SurveyAuthor
+
+  updatedAt: Float
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  content: [SurveyContentWithLanguage]
+}
+
+type SurveyChoiceOpen implements SurveyChoice {
+  id: ID!
+
+  position: Int
+
+  kind: String
+
+  surveyQuestion: ID!
+
+  otherChoice: Boolean
+
+  hidden: Boolean
+
+  author: ID
+
+  preview: Boolean
+
+  surveyAuthor: SurveyAuthor
+
+  updatedAt: Float
+
+  status: SurveyLanguageStatus
+
+  languageStatus: [SurveyLanguageStatusWithLanguage]
+
+  content: [SurveyContentWithLanguage]
+
+  require: Boolean
+}
+
+enum SurveyChoiceTypeEvent {
+  add
+
+  update
+
+  move
+
+  delete
+}
+
+type AdditionalSurveyChoiceEventData {
+  oldPosition: Int
+}
+
+type SurveyChoiceEvent {
+  event: SurveyChoiceTypeEvent!
+
+  choice: SurveyChoice!
+
+  additionalData: AdditionalSurveyChoiceEventData
+}
+
+interface SurveyAnswer {
+  id: ID!
+
+  createdAt: Float
+
+  kind: String
+
+  surveyAuthor: ID!
+
+  preview: Boolean
+
+  surveyQuestion: ID
+
+  survey: ID
+
+  language: String
+}
+
+type SurveyAnswerDefault implements SurveyAnswer {
+  id: ID!
+
+  createdAt: Float
+
+  kind: String
+
+  surveyAuthor: ID!
+
+  preview: Boolean
+
+  surveyQuestion: ID
+
+  survey: ID
+
+  language: String
+}
+
+type SurveyAnswerChoice implements SurveyAnswer {
+  id: ID!
+
+  createdAt: Float
+
+  kind: String
+
+  surveyAuthor: ID!
+
+  preview: Boolean
+
+  surveyQuestion: ID
+
+  survey: ID
+
+  language: String
+
+  choices: [ID]
+}
+
+type SurveyAnswerText implements SurveyAnswer {
+  id: ID!
+
+  createdAt: Float
+
+  kind: String
+
+  surveyAuthor: ID!
+
+  preview: Boolean
+
+  surveyQuestion: ID
+
+  survey: ID
+
+  language: String
+
+  surveyChoice: ID
+
+  field: ID
+
+  content: String
+}
+
+type SurveyAnswerNumber implements SurveyAnswer {
+  id: ID!
+
+  createdAt: Float
+
+  kind: String
+
+  surveyAuthor: ID!
+
+  preview: Boolean
+
+  surveyQuestion: ID
+
+  survey: ID
+
+  language: String
+
+  surveyChoice: ID
+
+  field: ID
+
+  numberContent: Int
+}
+
+type SurveyAnswerCalendar implements SurveyAnswer {
+  id: ID!
+
+  createdAt: Float
+
+  kind: String
+
+  surveyAuthor: ID!
+
+  preview: Boolean
+
+  surveyQuestion: ID
+
+  survey: ID
+
+  language: String
+
+  booked: Boolean
+}
+
+type SurveyAnswerResponse {
+  answer: SurveyAnswer
+
+  nextQuestion: SurveyQuestionWithNavigation
+}
+
+type MultiSurveyAnswerResponse {
+  answers: [SurveyAnswer]
+
+  nextQuestion: SurveyQuestionWithNavigation
+}
+
+input AnswerTextInput {
+  field: ID
+
+  content: String
+}
+
+input AnswerNumberInput {
+  field: ID
+
+  content: Int
+}
+
+enum SurveyAuthorConfidentialityStatus {
+  rejected
+
+  none
+
+  accepted
+}
+
+type SurveyAuthorConfidentiality {
+  status: SurveyAuthorConfidentialityStatus
+}
+
+type SurveyAuthorPopulated {
+  id: ID
+
+  author: ID
+
+  sourceAuthor: SourceAuthor
+
+  survey: ID
+
+  resultNPS: Int
+
+  confidentiality: SurveyAuthorConfidentiality
+
+  createdAt: Date
+
+  updatedAt: Date
+
+  dateLastAction: Date
+
+  hasStarted: Boolean
+
+  hasAnswered: Boolean
+
+  reachEnd: Boolean
+
+  dateReachEnd: Date
+}
+
+type SurveyAuthor {
+  id: ID
+
+  author: ID
+
+  sourceAuthor: ID
+
+  survey: ID
+
+  name: String
+
+  resultNPS: Int
+
+  confidentiality: SurveyAuthorConfidentiality
+
+  createdAt: Date
+
+  updatedAt: Date
+
+  dateLastAction: Date
+}
+
+enum SurveyAuthorTypeEvent {
+  add
+
+  update
+
+  delete
+}
+
+type SurveyAuthorEvent {
+  event: SurveyAuthorTypeEvent!
+
+  author: SurveyAuthor!
+}
+
+type SurveyAuthorAnswer {
+  title: String
+
+  answer: String
+
+  kind: String
+}
+
+type UserInfos {
+  hasStarted: Boolean
+
+  hasAnswered: Boolean
+
+  reachEnd: Boolean
+
+  dateReachEnd: Date
+
+  dateLastAction: Date
+
+  resultNPS: Int
+
+  archived: Boolean
+}
+
+type SurveyAuthorWithAnswers {
+  surveyId: ID
+
+  surveyName: String
+
+  testerUrl: String
+
+  userInfos: UserInfos
+
+  answers: [SurveyAuthorAnswer]
+}
+
+type SurveyReportCover {
+  logo: String
+
+  image: String
+
+  hideLogo: Boolean
+
+  active: Boolean
+}
+
+input SurveyReportCoverInput {
+  logo: String
+
+  image: String
+
+  hideLogo: Boolean
+
+  active: Boolean
+}
+
+type SurveyReportColor {
+  value: String
+
+  active: Boolean
+}
+
+input SurveyReportColorInput {
+  value: String
+
+  active: Boolean
+}
+
+type SurveyReportCustomization {
+  cover: SurveyReportCover
+
+  color: SurveyReportColor
+
+  iconColor: String
+}
+
+enum SurveyReportStatus {
+  outdated
+
+  updated
+}
+
+type SurveyReportGlobalInfoRatesOnTimeData {
+  percent: [Int]
+
+  nbUsers: [Int]
+}
+
+type SurveyReportGlobalInfoRatesOnTime {
+  dataInterval: [SurveyReportGlobalInfoRatesOnTimeData]
+
+  firstDate: Date
+
+  lastDate: Date
+}
+
+type SurveyReportGlobalInfoDeviceStats {
+  desktop: Int
+
+  tablet: Int
+
+  phone: Int
+
+  other: Int
+}
+
+type SurveyReportGlobalInfoLanguage {
+  language: String
+
+  nb: Int
+
+  percent: Int
+}
+
+type SurveyReportGlobalInfo {
+  nbQuestions: Int
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  nbViews: Int
+
+  nbFinalized: Int
+
+  completionRate: Float
+
+  startRate: Float
+
+  ratesOnTime: SurveyReportGlobalInfoRatesOnTime
+
+  deviceStats: SurveyReportGlobalInfoDeviceStats
+
+  language: [SurveyReportGlobalInfoLanguage]
+}
+
+type SurveyReport {
+  id: ID!
+
+  customization: SurveyReportCustomization
+
+  title: String
+
+  color: String
+
+  status: SurveyReportStatus
+
+  lastUpdate: Float
+
+  isPublic: Boolean
+
+  globalInfo: SurveyReportGlobalInfo
+
+  survey: ID
+
+  filters: [Filter]
+}
+
+type SurveyReportWithSections {
+  id: ID!
+
+  customization: SurveyReportCustomization
+
+  title: String
+
+  color: String
+
+  status: SurveyReportStatus
+
+  lastUpdate: Float
+
+  isPublic: Boolean
+
+  globalInfo: SurveyReportGlobalInfo
+
+  survey: ID
+
+  filters: [Filter]
+
+  sections: [SurveyReportSection]
+}
+
+type SurveyGlobalAuthorInfo {
+  name: String
+
+  email: String
+}
+
+type ReportOfAuthor {
+  globalInfo: SurveyGlobalAuthorInfo
+
+  answers: [SurveyAnswer]
+}
+
+type SurveyOfAllAuthor {
+  surveyAuthor: SurveyAuthorPopulated
+
+  answers: [SurveyAnswer]
+}
+
+enum SurveyReportTypeEvent {
+  add
+
+  update
+
+  delete
+}
+
+type SurveyReportEvent {
+  event: SurveyReportTypeEvent!
+
+  report: SurveyReport!
+}
+
+type ProcessingSurveyReportWithSections {
+  jobId: String
+
+  status: String
+
+  res: SurveyReportWithSections
+}
+
+type ProcessingDownloadSurveyReportExcel {
+  jobId: String
+
+  status: String
+
+  res: String
+}
+
+enum DeviceType {
+  desktop
+
+  tablet
+
+  phone
+}
+
+type hiddenField {
+  key: String
+
+  value: String
+}
+
+input hiddenFieldInput {
+  key: String
+
+  value: String
+}
+
+type SourceAuthor {
+  id: ID
+
+  author: ID
+
+  source: ID
+
+  name: String
+
+  deviceType: DeviceType
+
+  customData: JSON
+
+  language: String
+
+  dateLastAction: Date
+
+  dateLastAnswer: Date
+
+  nbSessions: Int
+
+  createdAt: Date
+
+  updatedAt: Date
+}
+
+enum SourceAuthorTypeEvent {
+  add
+
+  update
+
+  delete
+}
+
+type SourceAuthorEvent {
+  event: SourceAuthorTypeEvent!
+
+  author: SourceAuthor!
+}
+
+interface SurveyReportSection {
+  id: ID!
+
+  surveyQuestion: SurveyQuestion
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  position: Int
+
+  kind: String
+
+  surveyReport: ID
+
+  dropRate: Float
+
+  dropNb: Int
+
+  skipNb: Int
+
+  responseTimeAverage: Float
+
+  display: Boolean
+}
+
+type SurveyReportAnswer {
+  surveyAuthor: SurveyAuthor
+
+  answer: SurveyAnswer
+}
+
+type SurveyReportMultiAnswer {
+  surveyAuthor: SurveyAuthor
+
+  answers: [SurveyAnswer]
+}
+
+type SurveyReportSectionContactInfo implements SurveyReportSection {
+  id: ID!
+
+  surveyQuestion: SurveyQuestionContactInfo
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  position: Int
+
+  surveyReport: ID
+
+  dropRate: Float
+
+  dropNb: Int
+
+  skipNb: Int
+
+  responseTimeAverage: Float
+
+  kind: String
+
+  display: Boolean
+
+  multiAnswers: [SurveyReportMultiAnswer]
+}
+
+type SurveyReportSectionOpen implements SurveyReportSection {
+  id: ID!
+
+  surveyQuestion: SurveyQuestionOpen
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  position: Int
+
+  surveyReport: ID
+
+  dropRate: Float
+
+  dropNb: Int
+
+  skipNb: Int
+
+  responseTimeAverage: Float
+
+  kind: String
+
+  display: Boolean
+
+  answers: [SurveyReportAnswer]
+}
+
+type SurveyReportSectionDataInterval {
+  percent: [Int]
+
+  nbUsers: [Int]
+}
+
+type SurveyReportSectionData {
+  percent: Float
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+}
+
+type SurveyReportSectionChoice implements SurveyReportSection {
+  id: ID!
+
+  surveyQuestion: SurveyQuestionChoice
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  position: Int
+
+  surveyReport: ID
+
+  dropRate: Float
+
+  dropNb: Int
+
+  skipNb: Int
+
+  responseTimeAverage: Float
+
+  kind: String
+
+  display: Boolean
+
+  data: [SurveyReportSectionData]
+}
+
+type SurveyReportSectionNPS implements SurveyReportSection {
+  id: ID!
+
+  surveyQuestion: SurveyQuestionNPS
+
+  graphType: String
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  position: Int
+
+  surveyReport: ID
+
+  dropRate: Float
+
+  dropNb: Int
+
+  skipNb: Int
+
+  responseTimeAverage: Float
+
+  kind: String
+
+  display: Boolean
+
+  dataInterval: [SurveyReportSectionDataInterval]
+
+  data: [SurveyReportSectionData]
+
+  firstDateAnswer: Date
+
+  lastDateAnswer: Date
+
+  dataCuted: String
+}
+
+type SurveyReportSectionOpinion implements SurveyReportSection {
+  id: ID!
+
+  surveyQuestion: SurveyQuestionOpinion
+
+  nbUsers: Int
+
+  nbFullUsers: Int
+
+  position: Int
+
+  surveyReport: ID
+
+  dropRate: Float
+
+  dropNb: Int
+
+  skipNb: Int
+
+  responseTimeAverage: Float
+
+  kind: String
+
+  display: Boolean
+
+  graphType: String
+
+  dataInterval: [SurveyReportSectionDataInterval]
+
+  data: [SurveyReportSectionData]
+
+  firstDateAnswer: Date
+
+  lastDateAnswer: Date
+
+  dataCuted: String
+}
+
+input SurveyReportSectionUpdateInput {
+  id: ID!
+
+  graphType: String
+
+  display: Boolean
+}
+
+type whenData {
+  seeItOnlyOnce: Boolean
+
+  replyOnlyOnce: Boolean
+}
+
+interface SurveyTrigger {
+  id: ID!
+
+  survey: ID!
+
+  kind: String
+
+  whenData: whenData
+
+  overlay: SurveyOverlay
+
+  publicPercent: Int
+}
+
+type SurveyTriggerDelay {
+  value: Int!
+
+  active: Boolean!
+}
+
+input SurveyTriggerDelayInput {
+  value: Int
+
+  active: Boolean
+}
+
+type SurveyTriggerURLScroll {
+  value: Int!
+
+  active: Boolean!
+}
+
+input SurveyTriggerURLScrollInput {
+  value: Int
+
+  active: Boolean
+}
+
+type SurveyTriggerURLCondition {
+  variable: String!
+
+  operator: String!
+
+  value: String!
+}
+
+input SurveyTriggerURLConditionInput {
+  variable: String!
+
+  operator: String!
+
+  value: String!
+}
+
+type SurveyTriggerURL implements SurveyTrigger {
+  id: ID!
+
+  survey: ID!
+
+  kind: String
+
+  whenData: whenData
+
+  publicPercent: Int
+
+  overlay: SurveyOverlay
+
+  onAllUrl: Boolean
+
+  onLoadPage: Boolean
+
+  delay: SurveyTriggerDelay
+
+  scroll: SurveyTriggerURLScroll
+
+  condition: SurveyTriggerURLCondition
+}
+
+type SurveyTriggerScreen implements SurveyTrigger {
+  id: ID!
+
+  survey: ID!
+
+  kind: String
+
+  whenData: whenData
+
+  publicPercent: Int
+
+  overlay: SurveyOverlay
+
+  onAllScreen: Boolean
+
+  onLoadScreen: Boolean
+
+  delay: SurveyTriggerDelay
+
+  condition: SurveyTriggerURLCondition
+}
+
+type SurveyTriggerClick implements SurveyTrigger {
+  id: ID!
+
+  survey: ID!
+
+  kind: String
+
+  whenData: whenData
+
+  publicPercent: Int
+
+  overlay: SurveyOverlay
+
+  variable: String!
+
+  value: String!
+}
+
+type SurveyTriggerCustomEventCondition {
+  key: String
+
+  operator: String
+
+  value: String
+}
+
+input SurveyTriggerCustomEventConditionInput {
+  key: String
+
+  operator: String
+
+  value: String
+}
+
+type SurveyTriggerCustomEvent implements SurveyTrigger {
+  id: ID!
+
+  survey: ID!
+
+  kind: String
+
+  whenData: whenData
+
+  publicPercent: Int
+
+  overlay: SurveyOverlay
+
+  eventName: String
+
+  conditions: [SurveyTriggerCustomEventCondition]
+}
+
+input SurveyReplied {
+  surveyId: ID
+
+  date: Date
+
+  replied: Boolean
+}
+
+type SurveyTriggerWhenPeriod {
+  active: Boolean
+
+  beginDate: Date
+
+  endDate: Date
+}
+
+input SurveyTriggerWhenPeriodInput {
+  active: Boolean
+
+  beginDate: Date
+
+  endDate: Date
+}
+
+type SurveyTriggerWhenRecurrency {
+  active: Boolean
+
+  value: Int
+}
+
+input SurveyTriggerWhenRecurrencyInput {
+  active: Boolean
+
+  value: Int
+}
+
+type SurveyTriggerWhen {
+  id: ID!
+
+  survey: ID!
+
+  period: SurveyTriggerWhenPeriod
+
+  recurrency: SurveyTriggerWhenRecurrency
+
+  seeItOnlyOnce: Boolean
+
+  replyOnlyOnce: Boolean
+}
+
+type SurveyTriggerWhoLanguages {
+  list: [String]
+
+  operator: String
+}
+
+type SurveyTriggerWhoCountries {
+  list: [String]!
+
+  operator: String!
+}
+
+type SurveyTriggerWhoVersions {
+  list: [String]!
+
+  operator: String!
+}
+
+input SurveyTriggerWhoLanguagesInput {
+  list: [String]
+
+  operator: String
+}
+
+input SurveyTriggerWhoCountriesInput {
+  list: [String]!
+
+  operator: String!
+}
+
+input SurveyTriggerWhoVersionsInput {
+  list: [String]!
+
+  operator: String!
+}
+
+type SurveyTriggerWho {
+  id: ID!
+
+  survey: ID!
+
+  devices: [String]
+
+  navigators: [String]
+
+  os: [String]
+
+  languages: SurveyTriggerWhoLanguages
+
+  versions: SurveyTriggerWhoVersions
+
+  publicPercent: Int
+}
+
+enum publicLinkDataReactionType {
+  clap
+
+  like
+
+  confused
+
+  love
+}
+
+enum publicLinkDataModules {
+  comments
+
+  reaction
+}
+
+type PublicLinkDataVote {
+  author: PublicUser!
+
+  value: Int
+}
+
+type PublicLinkDataReaction {
+  active: Boolean
+
+  clap: [PublicLinkDataVote]
+
+  like: [PublicLinkDataVote]
+
+  confused: [PublicLinkDataVote]
+
+  love: [PublicLinkDataVote]
+}
+
+type PublicLinkDataComment {
+  author: PublicUser!
+
+  createdAt: Float
+
+  value: String
+
+  updated: Boolean
+}
+
+type PublicLinkDataComments {
+  active: Boolean
+
+  value: [PublicLinkDataComment]
+}
+
+type PublicLinkData {
+  id: ID!
+
+  file: ID!
+
+  reaction: PublicLinkDataReaction
+
+  comments: PublicLinkDataComments
+}
+
+enum FolderStatus {
+  NOT_INSTALLED
+
+  INCOMPLETE
+
+  INSTALLED
+}
+
+type FolderPopulated {
+  id: ID!
+
+  name: String!
+
+  team: Team
+
+  type: String
+
+  status: FolderStatus
+
+  tag: String
+}
+
+type Folder {
+  id: ID!
+
+  name: String!
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  team: ID
+
+  type: String
+
+  status: FolderStatus
+
+  tag: String
+
+  os: String
+
+  subType: String
+
+  configSourceAuthorData: JSON
+
+  configCustomEventData: JSON
+
+  optionsEvent: JSON
+}
+
+type FolderEvent {
+  event: typeEvent!
+
+  folder: Folder
+}
+
+input SearchInput {
+  name: String!
+
+  type: String!
+}
+
+input SortInput {
+  type: String!
+}
+
+union ElemProject = File|Folder|AppLink
+
+type ListFolderAdmin {
+  offset: Int
+
+  limit: Int
+
+  total: Int
+
+  list: [FolderAdmin]
+}
+
+type FolderAdmin {
+  data: FolderPopulated
+
+  listClientApp: [ClientApp]
+
+  reachMonthly: Int
+
+  reachTotal: Int
+
+  asReachedLimit: Boolean
+}
+
+type SourcesType {
+  inApp: Int
+
+  inAppMobile: Int
+
+  link: Int
+}
+
+type AppLink {
+  id: ID!
+
+  name: String!
+
+  link: String!
+
+  folder: ID
+}
+
+type AppLinkEvent {
+  event: typeEvent!
+
+  appLink: AppLink
+}
+
+type DataQuestion {
+  kind: String
+
+  text: String
+}
+
+type DataContent {
+  welcomeMessage: String
+
+  questions: [DataQuestion]
+
+  thankyouMessage: String
+}
+
+type TemplateFolderData {
+  name: String
+
+  color: String
+}
+
+type TemplateLink {
+  name: String
+
+  url: String
+}
+
+input TemplateLinkInput {
+  name: String!
+
+  url: String!
+}
+
+type Template {
+  id: ID!
+
+  title: String
+
+  desc: String
+
+  image: String
+
+  createdAt: Float
+
+  language: [Language]
+
+  data: DataContent
+
+  link: TemplateLink
+
+  published: Boolean
+
+  counter: Int
+
+  tags: [Tag]
+
+  type: String
+
+  onboarding: Boolean
+}
+
+enum FieldTemplateListSearch {
+  name
+
+  createdAt
+}
+
+enum TypeTemplateListSort {
+  asc
+
+  desc
+}
+
+input TemplateListSort {
+  field: FieldTemplateListSearch
+
+  typeSort: TypeTemplateListSort
+}
+
+input TemplateListFilter {
+  field: FieldTeamListSearch
+
+  value: String
+}
+
+type Templates {
+  offset: Int
+
+  limit: Int
+
+  total: Int
+
+  templates: [Template]
+}
+
+interface Notification {
+  id: ID!
+
+  userId: ID
+
+  seen: Boolean
+
+  link: String
+
+  kind: String
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  displayedDate: Float
+
+  team: Team
+}
+
+enum InvitationType {
+  folder
+
+  file
+
+  team
+}
+
+type NotificationInvitation implements Notification {
+  id: ID!
+
+  userId: ID
+
+  seen: Boolean
+
+  link: String
+
+  kind: String
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  displayedDate: Float
+
+  team: Team
+
+  host: User
+}
+
+type NotificationUpdateTold implements Notification {
+  id: ID!
+
+  userId: ID
+
+  seen: Boolean
+
+  link: String
+
+  kind: String
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  displayedDate: Float
+
+  team: Team
+}
+
+type NotificationSurveyNewAnswer implements Notification {
+  id: ID!
+
+  userId: ID
+
+  seen: Boolean
+
+  link: String
+
+  kind: String
+
+  createdAt: Float
+
+  updatedAt: Float
+
+  displayedDate: Float
+
+  team: Team
+
+  file: File
+
+  source: Folder
+
+  count: Int
+}
+
+type NotificationTeam {
+  team: ID
+
+  asNotification: Boolean
+}
+
+enum stripePortalSessionConfig {
+  default
+
+  listInvoices
+}
+
+type ClientAppMobile {
+  app: String
+
+  os: String
+}
+
+input ClientAppMobileInput {
+  app: String
+
+  os: String
+}
+
+input ClientAppWebInput {
+  hostname: String
+
+  port: String
+}
+
+type ClientApp {
+  id: ID!
+
+  hostname: String
+
+  installed: Boolean
+
+  project: ID
+
+  mobile: ClientAppMobile
+}
+
+type EventAllowed {
+  gtm: Boolean
+
+  click: Boolean
+
+  scroll: Boolean
+
+  page: Boolean
+}
+
+type CheckIfAppIsAllowed {
+  allowed: Boolean
+
+  eventAllowed: EventAllowed
+}
+
+enum roleTeamName {
+  admin
+
+  member
+
+  viewer
+
+  undefined
+}
+
+type TeamUser {
+  user: User!
+
+  role: roleTeamName
+
+  statusToDisplay: String
+}
+
+type TeamWaitingUser {
+  email: String
+
+  role: roleTeamName
+}
+
+type MoreInfosTeam {
+  position: String
+
+  teamSize: String
+}
+
+input MoreInfosTeamInput {
+  position: String
+
+  teamSize: String
+}
+
+type Team {
+  id: ID!
+
+  name: String!
+
+  image: String
+
+  listUsers: [TeamUser]
+
+  waitingUsers: [TeamWaitingUser]
+
+  createdAt: Float
+
+  plan: Plan
+
+  datePlan: Date
+
+  nextPlan: Plan
+
+  nextDatePlan: Date
+
+  installed: Boolean
+
+  dateExceedPlan: Date
+
+  moreInfos: MoreInfosTeam
+
+  trialEndSoon: Boolean
+}
+
+type Teams {
+  offset: Int
+
+  limit: Int
+
+  total: Int
+
+  teams: [Team]
+}
+
+type TeamsFilesCount {
+  teamId: ID!
+
+  teamName: String
+
+  filesCount: Int
+}
+
+type TeamWithFirstFileDate {
+  teamId: ID!
+
+  createdAt: Float!
+
+  firstFileCreatedAt: Float
+
+  firstSourceValidatedCreatedAt: Float
+}
+
+type TeamWithToldInstalled {
+  teamId: ID!
+
+  teamName: String
+
+  installed: Boolean
+}
+
+type TeamsCountByPlan {
+  planId: ID!
+
+  planName: String
+
+  teamsCount: Int
+}
+
+enum FieldTeamListSearch {
+  name
+
+  planName
+
+  createdAt
+}
+
+enum TypeTeamListSort {
+  asc
+
+  desc
+}
+
+input TeamListSort {
+  field: FieldTeamListSearch
+
+  typeSort: TypeTeamListSort
+}
+
+input TeamListFilter {
+  field: FieldTeamListSearch
+
+  value: String
+}
+
+type TeamUsage {
+  totalCount: Int!
+
+  totalCountAnswersOfSurveyArchived: Int
+
+  dateExceed: Date
+}
+
+type dataTeamViews {
+  id: ID
+
+  nbViews: Int
+}
+
+type TeamUsageData {
+  dataInterval: JSON
+
+  beginDate: Date
+
+  endDate: Date
+}
+
+type SurveyAndSources {
+  file: File
+
+  source: Folder
+}
+
+input FilterDate {
+  type: String
+
+  number: Int
+}
+
+type TeamRights {
+  invite: Boolean
+
+  delete: Boolean
+
+  manage: Boolean
+}
+
+type ProjectRights {
+  create: Boolean
+
+  delete: Boolean
+
+  edit: Boolean
+}
+
+type RoleTeam {
+  id: ID!
+
+  name: String!
+
+  teamRights: TeamRights
+
+  projectRights: ProjectRights
+}
+
+type FeaturePlan {
+  feature: Feature
+
+  active: Boolean
+}
+
+type StripeCard {
+  last4: String
+
+  exp_month: Int
+
+  exp_year: Int
+
+  name: String
+}
+
+type StripePlan {
+  stripeId: String
+
+  interval: String
+
+  current_period_end: Int
+
+  amount: Int
+
+  interval_count: Int
+
+  card: StripeCard
+}
+
+input FeatureInput {
+  name: String
+
+  active: Boolean
+}
+
+type ResultCheckActivationSurveyQuestions {
+  currentNumber: Int
+
+  maxNumber: Int
+
+  listQuestionsNotInPlan: [String]
+}
+
+type ResultCheckActivationSurveySurveys {
+  currentNumber: Int
+
+  maxNumber: Int
+}
+
+type ResultCheckActivationSurveySources {
+  currentNumber: Int
+
+  maxNumber: Int
+
+  typeAccepted: Boolean
+
+  type: String
+
+  sourceBlocked: Boolean
+}
+
+type ResultCheckActivationSurvey {
+  canBeActivated: Boolean
+
+  questions: ResultCheckActivationSurveyQuestions
+
+  surveys: ResultCheckActivationSurveySurveys
+
+  sources: ResultCheckActivationSurveySources
+}
+
+type Plan {
+  id: ID!
+
+  name: String!
+
+  viewsLimit: Int
+
+  repliesLimit: Int
+
+  usersLimit: Int
+
+  questionLimit: Int
+
+  sourceLimit: Int
+
+  fileLimit: Int
+
+  trialDays: Int
+
+  default: Boolean
+
+  priority: Int
+
+  features: [FeaturePlan]
+
+  stripePlans: [StripePlan]
+}
+
+type Feature {
+  id: ID!
+
+  name: String!
+
+  isInBeta: Boolean
+}
+
+type Tag {
+  id: ID!
+
+  text: String
+}
+
+enum EventName {
+  NEW_ANSWER
+
+  ON_DELAY
+
+  ON_SCROLL
+
+  ON_CLICK
+
+  CHANGE_PAGE
+
+  CUSTOM_EVENT
+
+  START_SURVEY
+
+  REACH_END
+
+  CLOSE_SURVEY
+
+  IDENTIFY
+
+  RESET
+}
+
+enum OS {
+  IOS
+
+  ANDROID
+}
+
+type PrimaryEventData {
+  language: String
+
+  deviceType: DeviceType
+
+  os: OS
+
+  version: String
+
+  hiddenFields: [hiddenField]
+
+  url: String
+
+  pageName: String
+
+  survey: ID
+}
+
+input PrimaryEventDataInput {
+  language: String
+
+  deviceType: DeviceType
+
+  os: OS
+
+  version: String
+
+  hiddenFields: [hiddenFieldInput]
+
+  url: String
+
+  pageName: String
+
+  survey: ID
+}
+
+interface Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+}
+
+type DefaultEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+}
+
+type AnswerEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  question: ID
+
+  answers: [ID]
+
+  surveyAuthor: ID
+}
+
+type ClickEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  classNames: [String]
+
+  htmlId: String
+
+  text: String
+}
+
+type CustomEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  customName: String!
+
+  customData: JSON
+}
+
+type DelayEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  delayValue: Int
+}
+
+type ScrollEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  scrollValue: Int
+}
+
+type triggerActivateParam {
+  delay: Int
+}
+
+type triggerCustomizationParam {
+  overlay: SurveyOverlay
+}
+
+type TriggerInfo {
+  activate: Boolean
+
+  surveyId: ID
+
+  activateParam: triggerActivateParam
+
+  customizationParam: triggerCustomizationParam
+}
+
+type EventData {
+  event: Event
+
+  triggerInfo: TriggerInfo!
+}
+
+input EventFilters {
+  type: EventName
+
+  startDate: DateTime
+
+  endDate: DateTime
+}
+
+type AnalyticTeam {
+  id: ID!
+
+  name: String!
+
+  createdAt: Float
+
+  updatedAt: Float
+}
+
+type ActivationGraph {
+  countTeam: Int
+
+  countSourceINAPP: Int
+
+  countSourceLink: Int
+
+  countFile: Int
+
+  countInstalled: Int
+
+  countActive: Int
+}
+
+input EmailSourceInput {
+  source: ID!
+
+  active: Boolean
+
+  kind: String
+}
+
+type EmailSource {
+  source: Folder
+
+  active: Boolean
+
+  kind: String
+
+  listSurvey: [ID]
+}
+
+type EmailSettings {
+  id: ID!
+
+  user: ID
+
+  unsubscribed: Boolean
+
+  list: [EmailSource]
+}
+
+enum AudienceConditionType {
+  and
+
+  or
+}
+
+type Audience {
+  id: ID!
+
+  name: String
+
+  color: Int
+
+  conditionType: AudienceConditionType!
+
+  filters: [Filter]
+
+  source: ID!
+
+  default: Boolean
+}
+
+type AudienceCalcResult {
+  nbTotal: Int
+
+  sourceAuthorList: [SourceAuthor]
+}
+
+type ProcessingAudience {
+  jobId: String
+
+  status: String
+
+  res: AudienceCalcResult
+}
+
+enum FieldCalcAudienceSort {
+  name
+
+  email
+
+  dateLastAction
+
+  dateLastAnswer
+
+  nbSessions
+}
+
+enum FieldCalcAudienceSearch {
+  name
+
+  email
+}
+
+input CalcAudienceSort {
+  field: FieldCalcAudienceSort
+
+  typeSort: DefaultSortEnum
+}
+
+input CalcAudienceSearch {
+  field: FieldCalcAudienceSearch
+
+  value: String
+}
+
+interface Filter {
+  id: ID!
+
+  kind: String!
+}
+
+type DefaultFilter implements Filter {
+  id: ID!
+
+  kind: String!
+}
+
+enum AnswerEventFilterConditionType {
+  equal
+
+  notEqual
+
+  any
+
+  asAnswered
+
+  asNotAnswered
+}
+
+type AnswerEventFilter implements Filter {
+  id: ID!
+
+  survey: ID
+
+  kind: String!
+
+  conditionType: AnswerEventFilterConditionType!
+
+  question: ID
+
+  choices: [ID]
+
+  answerValue: [Int]
+}
+
+enum ClickEventFilterElementType {
+  Id
+
+  Classes
+
+  Element
+
+  Text
+}
+
+enum ClickEventFilterConditionType {
+  moreEqualExists
+
+  lessExists
+
+  notExists
+
+  equal
+
+  notEqual
+}
+
+type ClickEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  clickElementType: ClickEventFilterElementType!
+
+  clickElementValue: String
+
+  conditionType: ClickEventFilterConditionType
+
+  clickValue: Int
+}
+
+enum CustomEventFilterConditionType {
+  equal
+
+  notEqual
+
+  exists
+
+  notExists
+}
+
+type CustomEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: CustomEventFilterConditionType!
+
+  customName: String!
+
+  field: String
+
+  customValue: String
+}
+
+enum DateFilterConditionType {
+  between
+
+  outside
+}
+
+type DateEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  beginDate: Date
+
+  endDate: Date
+
+  conditionType: DateFilterConditionType
+}
+
+enum DelayEventFilterConditionType {
+  equal
+}
+
+type DelayEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: DelayEventFilterConditionType!
+
+  delayValue: Int
+}
+
+enum PropsFilterTypeOrigin {
+  SOURCE_AUTHOR
+
+  SOURCE_AUTHOR_COMPANY
+}
+
+enum PropsFilterConditionType {
+  equal
+
+  notEqual
+
+  any
+}
+
+type PropsFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  typeOrigin: PropsFilterTypeOrigin!
+
+  field: String
+
+  conditionType: PropsFilterConditionType!
+
+  propsValue: [String]
+}
+
+enum ScrollEventFilterConditionType {
+  equal
+}
+
+type ScrollEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: ScrollEventFilterConditionType!
+
+  scrollValue: Int
+}
+
+type SourceFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  sources: [Folder]
+
+  surveys: [Survey]
+}
+
+enum UrlEventFilterUrlField {
+  path
+
+  url
+
+  dynamicUrl
+
+  pageName
+}
+
+enum UrlEventFilterConditionType {
+  equal
+
+  contain
+
+  notContain
+
+  notEqual
+}
+
+type UrlEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  urlField: UrlEventFilterUrlField!
+
+  conditionType: UrlEventFilterConditionType!
+
+  urlValue: String
+}
+
+enum FilterConditionTypeInput {
+  equal
+
+  notEqual
+
+  any
+
+  contain
+
+  notContain
+
+  asAnswered
+
+  asNotAnswered
+
+  moreEqualExists
+
+  equalExists
+
+  lessExists
+
+  notExists
+
+  exists
+
+  between
+
+  outside
+}
+
+enum FilterInputType {
+  AnswerEventFilter
+
+  ClickEventFilter
+
+  CustomEventFilter
+
+  DateEventFilter
+
+  DelayEventFilter
+
+  PropsFilter
+
+  ScrollEventFilter
+
+  SourceFilter
+
+  UrlEventFilter
+
+  DefaultFilter
+}
+
+input FilterInput {
+  conditionType: FilterConditionTypeInput
+
+  filterType: FilterInputType!
+
+  question: ID
+
+  choices: [ID]
+
+  survey: ID
+
+  answerValue: [Int]
+
+  clickElementType: ClickEventFilterElementType
+
+  clickElementValue: String
+
+  clickValue: Int
+
+  customName: String
+
+  field: String
+
+  customValue: String
+
+  beginDate: Date
+
+  endDate: Date
+
+  delayValue: Int
+
+  typeOrigin: PropsFilterTypeOrigin
+
+  propsValue: [String]
+
+  scrollValue: Int
+
+  sources: [ID]
+
+  surveys: [ID]
+
+  urlField: UrlEventFilterUrlField
+
+  urlValue: String
+}
+
+type FilterType {
+  kind: String!
+
+  conditionType: [FilterInputType!]
+}
+
+enum ConfigCustomDataType {
+  CUSTOM_EVENT
+
+  SOURCE_AUTHOR
+
+  SOURCE_AUTHOR_COMPANY
+}
+
+enum ConfigCustomDataTypeConfigKeyType {
+  number
+
+  string
+
+  boolean
+
+  array
+
+  object
+}
+
+type ConfigCustomDataTypeConfig {
+  key: String!
+
+  keyType: ConfigCustomDataTypeConfigKeyType!
+
+  subType: [JSON]
+}
+
+type ConfigCustomData {
+  id: ID!
+
+  source: ID!
+
+  customType: ConfigCustomDataType
+
+  eventName: String
+
+  config: [ConfigCustomDataTypeConfig]
+}
+
+"""
+A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.
+"""
+type __Schema {
+  description: String
+
+  """
+  A list of all types supported by this server.
+  """
+  types: [__Type!]!
+
+  """
+  The type that query operations will be rooted at.
+  """
+  queryType: __Type!
+
+  """
+  If this server supports mutation, the type that mutation operations will be rooted at.
+  """
+  mutationType: __Type
+
+  """
+  If this server support subscription, the type that subscription operations will be rooted at.
+  """
+  subscriptionType: __Type
+
+  """
+  A list of all directives supported by this server.
+  """
+  directives: [__Directive!]!
+}
+
+"""
+The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.
+
+Depending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name, description and optional `specifiedByURL`, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.
+"""
+type __Type {
+  kind: __TypeKind!
+
+  name: String
+
+  description: String
+
+  specifiedByURL: String
+
+  fields(includeDeprecated: Boolean = false): [__Field!]
+
+  interfaces: [__Type!]
+
+  possibleTypes: [__Type!]
+
+  enumValues(includeDeprecated: Boolean = false): [__EnumValue!]
+
+  inputFields(includeDeprecated: Boolean = false): [__InputValue!]
+
+  ofType: __Type
+
+  isOneOf: Boolean
+}
+
+"""
+An enum describing what kind of type a given `__Type` is.
+"""
+enum __TypeKind {
+  """
+  Indicates this type is a scalar.
+  """
+  SCALAR
+
+  """
+  Indicates this type is an object. `fields` and `interfaces` are valid fields.
+  """
+  OBJECT
+
+  """
+  Indicates this type is an interface. `fields`, `interfaces`, and `possibleTypes` are valid fields.
+  """
+  INTERFACE
+
+  """
+  Indicates this type is a union. `possibleTypes` is a valid field.
+  """
+  UNION
+
+  """
+  Indicates this type is an enum. `enumValues` is a valid field.
+  """
+  ENUM
+
+  """
+  Indicates this type is an input object. `inputFields` is a valid field.
+  """
+  INPUT_OBJECT
+
+  """
+  Indicates this type is a list. `ofType` is a valid field.
+  """
+  LIST
+
+  """
+  Indicates this type is a non-null. `ofType` is a valid field.
+  """
+  NON_NULL
+}
+
+"""
+Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.
+"""
+type __Field {
+  name: String!
+
+  description: String
+
+  args(includeDeprecated: Boolean = false): [__InputValue!]!
+
+  type: __Type!
+
+  isDeprecated: Boolean!
+
+  deprecationReason: String
+}
+
+"""
+Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.
+"""
+type __InputValue {
+  name: String!
+
+  description: String
+
+  type: __Type!
+
+  """
+  A GraphQL-formatted string representing the default value for this input value.
+  """
+  defaultValue: String
+
+  isDeprecated: Boolean!
+
+  deprecationReason: String
+}
+
+"""
+One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.
+"""
+type __EnumValue {
+  name: String!
+
+  description: String
+
+  isDeprecated: Boolean!
+
+  deprecationReason: String
+}
+
+"""
+A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.
+
+In some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.
+"""
+type __Directive {
+  name: String!
+
+  description: String
+
+  isRepeatable: Boolean!
+
+  locations: [__DirectiveLocation!]!
+
+  args(includeDeprecated: Boolean = false): [__InputValue!]!
+}
+
+"""
+A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.
+"""
+enum __DirectiveLocation {
+  """
+  Location adjacent to a query operation.
+  """
+  QUERY
+
+  """
+  Location adjacent to a mutation operation.
+  """
+  MUTATION
+
+  """
+  Location adjacent to a subscription operation.
+  """
+  SUBSCRIPTION
+
+  """
+  Location adjacent to a field.
+  """
+  FIELD
+
+  """
+  Location adjacent to a fragment definition.
+  """
+  FRAGMENT_DEFINITION
+
+  """
+  Location adjacent to a fragment spread.
+  """
+  FRAGMENT_SPREAD
+
+  """
+  Location adjacent to an inline fragment.
+  """
+  INLINE_FRAGMENT
+
+  """
+  Location adjacent to a variable definition.
+  """
+  VARIABLE_DEFINITION
+
+  """
+  Location adjacent to a schema definition.
+  """
+  SCHEMA
+
+  """
+  Location adjacent to a scalar definition.
+  """
+  SCALAR
+
+  """
+  Location adjacent to an object type definition.
+  """
+  OBJECT
+
+  """
+  Location adjacent to a field definition.
+  """
+  FIELD_DEFINITION
+
+  """
+  Location adjacent to an argument definition.
+  """
+  ARGUMENT_DEFINITION
+
+  """
+  Location adjacent to an interface definition.
+  """
+  INTERFACE
+
+  """
+  Location adjacent to a union definition.
+  """
+  UNION
+
+  """
+  Location adjacent to an enum definition.
+  """
+  ENUM
+
+  """
+  Location adjacent to an enum value definition.
+  """
+  ENUM_VALUE
+
+  """
+  Location adjacent to an input object type definition.
+  """
+  INPUT_OBJECT
+
+  """
+  Location adjacent to an input object field definition.
+  """
+  INPUT_FIELD_DEFINITION
+}
+
+"""
+Directs the executor to include this field or fragment only when the `if` argument is true.
+"""
+directive @include ("Included when true." if: Boolean!) on FIELD|FRAGMENT_SPREAD|INLINE_FRAGMENT
+
+"""
+Directs the executor to skip this field or fragment when the `if` argument is true.
+"""
+directive @skip ("Skipped when true." if: Boolean!) on FIELD|FRAGMENT_SPREAD|INLINE_FRAGMENT
+
+"""
+Marks an element of a GraphQL schema as no longer supported.
+"""
+directive @deprecated ("Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted using the Markdown syntax, as specified by [CommonMark](https://commonmark.org/)." reason: String = "No longer supported") on FIELD_DEFINITION|ARGUMENT_DEFINITION|INPUT_FIELD_DEFINITION|ENUM_VALUE
+
+"""
+Exposes a URL that specifies the behavior of this scalar.
+"""
+directive @specifiedBy ("The URL that specifies the behavior of this scalar." url: String!) on SCALAR
+
+"""
+Indicates exactly one field must be supplied and this field must not be `null`.
+"""
+directive @oneOf on INPUT_OBJECT
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}

@@ -1,0 +1,5 @@
+mutation GetAnonymousId($anonymousId: UUID, $hiddenFields: [hiddenFieldInput]) {
+  getAuthor(anonymousID: $anonymousId, hiddenFields: $hiddenFields) {
+    anonymousID
+  }
+}

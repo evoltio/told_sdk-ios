@@ -1,0 +1,13 @@
+query CheckIfCanUseWidgetWithSurvey($surveyID: ID!, $hostname: String, $port: String, $preview: Boolean, $os: String, $mobileApp: String) {
+  checkIfCanUseWidgetWithSurvey(surveyID: $surveyID, hostname: $hostname, port: $port, preview: $preview, os: $os, mobileApp: $mobileApp) {
+    canUse,
+    overlay {
+      active
+      color,
+      blur {
+        number,
+        active
+      }
+    }
+  }
+}
