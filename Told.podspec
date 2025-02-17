@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Told' => 'contact@told.club' }
-  s.source           = { :git => 'https://github.com/evoltio/told_sdk-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/evoltio/told_sdk-ios.git', :tag => s.version.to_s + '_pods' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '16.0'

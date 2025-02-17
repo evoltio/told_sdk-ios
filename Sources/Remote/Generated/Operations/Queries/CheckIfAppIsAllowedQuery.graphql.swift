@@ -1,12 +1,12 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-@_exported import ApolloAPI
+@_exported import Apollo
 
 extension ToldAPI {
   class CheckIfAppIsAllowedQuery: GraphQLQuery {
     static let operationName: String = "CheckIfAppIsAllowed"
-    static let operationDocument: ApolloAPI.OperationDocument = .init(
+    static let operationDocument: Apollo.OperationDocument = .init(
       definition: .init(
         #"query CheckIfAppIsAllowed($sourceId: ID!, $host: ClientAppWebInput, $mobile: ClientAppMobileInput) { checkIfAppIsAllowed(sourceID: $sourceId, url: $host, mobile: $mobile) { __typename allowed } }"#
       ))
@@ -35,8 +35,8 @@ extension ToldAPI {
       let __data: DataDict
       init(_dataDict: DataDict) { __data = _dataDict }
 
-      static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Query }
-      static var __selections: [ApolloAPI.Selection] { [
+      static var __parentType: Apollo.ParentType { ToldAPI.Objects.Query }
+      static var __selections: [Apollo.Selection] { [
         .field("checkIfAppIsAllowed", CheckIfAppIsAllowed?.self, arguments: [
           "sourceID": .variable("sourceId"),
           "url": .variable("host"),
@@ -53,8 +53,8 @@ extension ToldAPI {
         let __data: DataDict
         init(_dataDict: DataDict) { __data = _dataDict }
 
-        static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.CheckIfAppIsAllowed }
-        static var __selections: [ApolloAPI.Selection] { [
+        static var __parentType: Apollo.ParentType { ToldAPI.Objects.CheckIfAppIsAllowed }
+        static var __selections: [Apollo.Selection] { [
           .field("__typename", String.self),
           .field("allowed", Bool?.self),
         ] }

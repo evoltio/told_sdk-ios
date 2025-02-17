@@ -1,12 +1,12 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-@_exported import ApolloAPI
+@_exported import Apollo
 
 extension ToldAPI {
   class IdentifySourceAuthorByAnonymousIDMutation: GraphQLMutation {
     static let operationName: String = "IdentifySourceAuthorByAnonymousID"
-    static let operationDocument: ApolloAPI.OperationDocument = .init(
+    static let operationDocument: Apollo.OperationDocument = .init(
       definition: .init(
         #"mutation IdentifySourceAuthorByAnonymousID($anonymousID: UUID!, $sourceID: ID!, $customData: JSON!) { identifySourceAuthorByAnonymousID( anonymousID: $anonymousID sourceID: $sourceID customData: $customData ) }"#
       ))
@@ -35,8 +35,8 @@ extension ToldAPI {
       let __data: DataDict
       init(_dataDict: DataDict) { __data = _dataDict }
 
-      static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Mutation }
-      static var __selections: [ApolloAPI.Selection] { [
+      static var __parentType: Apollo.ParentType { ToldAPI.Objects.Mutation }
+      static var __selections: [Apollo.Selection] { [
         .field("identifySourceAuthorByAnonymousID", ToldAPI.UUID?.self, arguments: [
           "anonymousID": .variable("anonymousID"),
           "sourceID": .variable("sourceID"),

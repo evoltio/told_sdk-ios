@@ -1,12 +1,12 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-@_exported import ApolloAPI
+@_exported import Apollo
 
 extension ToldAPI {
   class GetAnonymousIdMutation: GraphQLMutation {
     static let operationName: String = "GetAnonymousId"
-    static let operationDocument: ApolloAPI.OperationDocument = .init(
+    static let operationDocument: Apollo.OperationDocument = .init(
       definition: .init(
         #"mutation GetAnonymousId($anonymousId: UUID, $hiddenFields: [hiddenFieldInput]) { getAuthor(anonymousID: $anonymousId, hiddenFields: $hiddenFields) { __typename anonymousID } }"#
       ))
@@ -31,8 +31,8 @@ extension ToldAPI {
       let __data: DataDict
       init(_dataDict: DataDict) { __data = _dataDict }
 
-      static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Mutation }
-      static var __selections: [ApolloAPI.Selection] { [
+      static var __parentType: Apollo.ParentType { ToldAPI.Objects.Mutation }
+      static var __selections: [Apollo.Selection] { [
         .field("getAuthor", GetAuthor.self, arguments: [
           "anonymousID": .variable("anonymousId"),
           "hiddenFields": .variable("hiddenFields")
@@ -48,8 +48,8 @@ extension ToldAPI {
         let __data: DataDict
         init(_dataDict: DataDict) { __data = _dataDict }
 
-        static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Author }
-        static var __selections: [ApolloAPI.Selection] { [
+        static var __parentType: Apollo.ParentType { ToldAPI.Objects.Author }
+        static var __selections: [Apollo.Selection] { [
           .field("__typename", String.self),
           .field("anonymousID", ToldAPI.UUID?.self),
         ] }
