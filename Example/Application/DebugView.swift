@@ -133,14 +133,6 @@ struct DebugView: View {
             }
 
             Section {
-                TextField("Language", text: $language)
-                    .textInputAutocapitalization(.never)
-                Button("Update Language") {
-                    Told.updateLanguage(language)
-                }
-            }
-
-            Section {
                 Button("Reset") {
                     Told.reset()
                 }

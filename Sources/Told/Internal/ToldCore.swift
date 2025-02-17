@@ -49,10 +49,6 @@ final class ToldCore {
         logger.log(level: .debug, message: "Told is already initialized")
     }
 
-    func updateLanguage(_ language: String) {
-        local.set(language, for: .language)
-    }
-
     func identify(property: [String: AnyHashable]) {
         Task {
             do {

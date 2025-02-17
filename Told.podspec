@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Told'
-  s.version          = '1.2.6'
+  s.version          = '2.0.0'
   s.summary          = 'Official Told iOS SDK'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
   Official Told iOS SDK, a new way to collect feedbacks !
                        DESC
 
-  s.homepage         = 'https://github.com/Slaymd/told-ios-sdk'
+  s.homepage         = 'https://github.com/evoltio/told_sdk-ios'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Told' => 'contact@told.club' }
-  s.source           = { :git => 'https://github.com/Slaymd/told-ios-sdk.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/evoltio/told_sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '16.0'
@@ -37,5 +37,5 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'SwiftUI'
-  s.dependency 'Apollo', '~> 1.9.0'
+  s.dependency 'Apollo', '~> 1.15.3'
 end

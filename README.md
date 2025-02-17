@@ -16,7 +16,7 @@ Minimum version iOS 16
 
 #### Swift Package Manager (SPM)
 
-To install ToldSDK via SPM, simply add the following URL : `https://github.com/Slaymd/told-ios-sdk.git` to your project dependencies.
+To install ToldSDK via SPM, simply add the following URL : `https://github.com/evoltio/told_sdk-ios.git` to your project dependencies.
 
 #### Cocoapods
 

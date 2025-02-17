@@ -61,15 +61,6 @@ public final class Told {
         core?.deactivateScreenTracker()
     }
 
-    /// Update the language
-    /// - Parameters:
-    ///    - language: The language identifier.
-    public static func updateLanguage(
-        _ language: String
-    ) {
-        core?.updateLanguage(language)
-    }
-
     /// Identify the current user with custom properties
     /// - Parameters:
     ///   - properties: The custom properties to use for the user identification.
