@@ -1,12 +1,12 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-@_exported import ApolloAPI
+@_exported import Apollo
 
 extension ToldAPI {
   class DebugWidgetQuery: GraphQLQuery {
     static let operationName: String = "DebugWidget"
-    static let operationDocument: ApolloAPI.OperationDocument = .init(
+    static let operationDocument: Apollo.OperationDocument = .init(
       definition: .init(
         #"query DebugWidget($id: ID!, $type: String, $hostname: String, $port: String) { debugWidget(id: $id, type: $type, hostname: $hostname, port: $port) }"#
       ))
@@ -39,8 +39,8 @@ extension ToldAPI {
       let __data: DataDict
       init(_dataDict: DataDict) { __data = _dataDict }
 
-      static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Query }
-      static var __selections: [ApolloAPI.Selection] { [
+      static var __parentType: Apollo.ParentType { ToldAPI.Objects.Query }
+      static var __selections: [Apollo.Selection] { [
         .field("debugWidget", String?.self, arguments: [
           "id": .variable("id"),
           "type": .variable("type"),

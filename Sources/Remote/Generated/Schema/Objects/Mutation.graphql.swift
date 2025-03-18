@@ -1,10 +1,10 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import ApolloAPI
+import Apollo
 
 extension ToldAPI.Objects {
-  static let Mutation = ApolloAPI.Object(
+  static let Mutation = Apollo.Object(
     typename: "Mutation",
     implementedInterfaces: []
   )
