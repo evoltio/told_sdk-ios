@@ -93,15 +93,15 @@ final class ScreenTracker {
 
             // The controller is a SwiftUI UIHostingController that will probably contains the View
             // in his description, this is not yet stable
-            let rootViewDescription: String = String(describing: swiftUIController._rootView)
-            guard
-                // Regex for extracting the viewName
-                let regex = try? Regex("ModifiedContent<(Swift.Optional<)?\(c99extidentifierBundleExecutableName).(?<viewName>[[:alnum:]|_]+)"),
-                let viewName = try! regex.firstMatch(in: rootViewDescription)?.output["viewName"]?.value as? Substring
-            else {
-                return nil
-            }
-            return String(viewName)
+//            let rootViewDescription: String = String(describing: swiftUIController._rootView)
+//            guard
+//                // Regex for extracting the viewName
+//                let regex = try? Regex("ModifiedContent<(Swift.Optional<)?\(c99extidentifierBundleExecutableName).(?<viewName>[[:alnum:]|_]+)"),
+//                let viewName = try! regex.firstMatch(in: rootViewDescription)?.output["viewName"]?.value as? Substring
+//            else {
+//                return nil
+//            }
+//            return String(viewName)
         }
         return nil
     }

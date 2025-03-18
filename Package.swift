@@ -9,7 +9,7 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "ToldLib",
+            name: "ToldSDK",
             targets: ["Told"]
         )
     ],
@@ -30,9 +30,6 @@ let package = Package(
                 "Local",
                 "Models",
                 "UI"
-            ],
-            swiftSettings: [
-                .unsafeFlags(["-enable-bare-slash-regex"])
             ]
         )
     ]
