@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		171D1B941C6A7C60E5602BBD /* Pods_Told_Example_Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C2FEB1423EE72C2DBB2191 /* Pods_Told_Example_Pods.framework */; };
+		933EC2BC2D8B27B700AE996F /* ToldSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 933EC2BB2D8B27B700AE996F /* ToldSDK */; };
 		A82543302D3172FA009A6700 /* UIKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A825432F2D3172F5009A6700 /* UIKitController.swift */; };
 		A82543312D3172FA009A6700 /* UIKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A825432F2D3172F5009A6700 /* UIKitController.swift */; };
 		A87E0B692D365D6800DB5276 /* ChildController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87E0B682D365D5F00DB5276 /* ChildController.swift */; };
@@ -18,7 +19,6 @@
 		A89406532D0B508C0036AA93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89406352D0B508C0036AA93 /* AppDelegate.swift */; };
 		A89406562D0B508C0036AA93 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89406392D0B508C0036AA93 /* Images.xcassets */; };
 		A89406572D0B508C0036AA93 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A894063C2D0B508C0036AA93 /* LaunchScreen.xib */; };
-		A8BE9F592D36771C002A0475 /* ToldLib in Frameworks */ = {isa = PBXBuildFile; productRef = A8BE9F582D36771C002A0475 /* ToldLib */; };
 		A8D567342D439C2D0084EFC4 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D567332D439C2C0084EFC4 /* ExampleApp.swift */; };
 		A8D567352D439C2D0084EFC4 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D567332D439C2C0084EFC4 /* ExampleApp.swift */; };
 		A8D567372D439C830084EFC4 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D567362D439C7E0084EFC4 /* TabView.swift */; };
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8BE9F592D36771C002A0475 /* ToldLib in Frameworks */,
+				933EC2BC2D8B27B700AE996F /* ToldSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +459,7 @@
 				DEVELOPMENT_TEAM = B3P87LQ9S9;
 				INFOPLIST_FILE = Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Told Demo";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,7 +486,7 @@
 				DEVELOPMENT_TEAM = B3P87LQ9S9;
 				INFOPLIST_FILE = Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Told Demo";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,7 +514,7 @@
 				DEVELOPMENT_TEAM = B3P87LQ9S9;
 				INFOPLIST_FILE = Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Told Demo";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,7 +542,7 @@
 				DEVELOPMENT_TEAM = B3P87LQ9S9;
 				INFOPLIST_FILE = Application/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Told Demo";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -601,10 +601,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A8BE9F582D36771C002A0475 /* ToldLib */ = {
+		933EC2BB2D8B27B700AE996F /* ToldSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A89406612D0B54190036AA93 /* XCLocalSwiftPackageReference "../../Told_iOS" */;
-			productName = ToldLib;
+			productName = ToldSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

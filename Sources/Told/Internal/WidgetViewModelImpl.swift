@@ -15,13 +15,15 @@ final class WidgetViewModelImpl: WidgetViewModel {
 
     let logger: Logger
     var urlRequest: URLRequest {
-        let url: URL = configuration.environment.widgetUrl.appending(
-            queryItems: [
-                URLQueryItem(name: "id", value: surveyId),
-                URLQueryItem(name: "sourceID", value: configuration.sourceId),
-                URLQueryItem(name: "anonymousID", value: anonymousId)
-            ]
-        )
+        var components = URLComponents(url: configuration.environment.widgetUrl, resolvingAgainstBaseURL: false)
+
+        components?.queryItems = [
+            URLQueryItem(name: "id", value: surveyId),
+            URLQueryItem(name: "sourceID", value: configuration.sourceId),
+            URLQueryItem(name: "anonymousID", value: anonymousId)
+        ]
+
+        let url = components?.url ?? configuration.environment.widgetUrl
         return URLRequest(url: url)
     }
 

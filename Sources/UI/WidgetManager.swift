@@ -29,7 +29,7 @@ final class WidgetManager {
         task?.cancel()
         task = Task {
             do {
-                try await Task.sleep(for: .seconds(delay))
+                try await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
                 if let window = createWindowIfNeeded() {
                     if window.rootViewController == nil {
                         let widgetController = WidgetController(

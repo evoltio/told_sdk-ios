@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '16.4'
+platform :ios, '14.8.1'
 
 target 'Told Example Pods' do
 

@@ -13,7 +13,7 @@ private extension Bundle {
     // We assume that the product module name is the product name with the c99ext standard
     var c99extidentifierBundleExecutableName: String? {
         guard let bundleExecutableName = Bundle.main.object(forInfoDictionaryKey: "CFBundleExecutable") as? String else { return nil }
-        return  bundleExecutableName.replacing(/[^[:alnum:]]/, with: "_")
+        return bundleExecutableName.unicodeScalars.map { CharacterSet.alphanumerics.contains($0) ? String($0) : "_" }.joined()
     }
 }
 

@@ -272,9 +272,9 @@ final class ToldCore {
             Locale
                 .preferredLanguages
                 .first
-                .flatMap(Locale.Language.init)?
-                .languageCode?
-                .identifier(.alpha2)
+                .flatMap { language in
+                    Locale(identifier: language).languageCode
+                }
         }()
     }
 

@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/evoltio/told_sdk-ios.git', :tag => s.version.to_s + '_pods' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '16.0'
+  s.ios.deployment_target = '14.8.1'
 
   s.source_files = 'Sources/**/*'
   s.exclude_files = 'Sources/Remote/graphql'
