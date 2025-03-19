@@ -5,10 +5,10 @@
 // Any changes to this file will not be overwritten by future
 // code generation execution.
 
-import ApolloAPI
+import Apollo
 
-enum SchemaConfiguration: ApolloAPI.SchemaConfiguration {
-  static func cacheKeyInfo(for type: ApolloAPI.Object, object: ApolloAPI.ObjectData) -> CacheKeyInfo? {
+enum SchemaConfiguration: Apollo.SchemaConfiguration {
+  static func cacheKeyInfo(for type: Apollo.Object, object: Apollo.ObjectData) -> CacheKeyInfo? {
     // Implement this function to configure cache key resolution for your schema types.
     return nil
   }
