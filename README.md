@@ -8,7 +8,7 @@ To run the example project, clone the repo, and follow `Installation`
 
 Create an account and a survey project on [Told website](https://told.club)
 
-Minimum version iOS 16
+Minimum version iOS 14
 
 ## Installation
 
@@ -20,7 +20,7 @@ To install ToldSDK via SPM, simply add the following URL : `https://github.com/e
 Or in your package.swift
 ```swift
     dependencies: [
-        .package(url: "https://github.com/evoltio/told_sdk-ios.git", from: "2.0.1")
+        .package(url: "https://github.com/evoltio/told_sdk-ios.git", from: "2.0.2")
     ],
     targets: [
         .target(
