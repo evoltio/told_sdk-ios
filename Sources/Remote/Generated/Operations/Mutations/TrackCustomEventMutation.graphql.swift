@@ -1,12 +1,12 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-@_exported import ApolloAPI
+@_exported import Apollo
 
 extension ToldAPI {
   class TrackCustomEventMutation: GraphQLMutation {
     static let operationName: String = "TrackCustomEvent"
-    static let operationDocument: ApolloAPI.OperationDocument = .init(
+    static let operationDocument: Apollo.OperationDocument = .init(
       definition: .init(
         #"mutation TrackCustomEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput, $customName: String!, $customData: JSON) { addCustomEvent( anonymousID: $anonymousId name: $name sourceID: $sourceId primaryData: $primaryData customName: $customName customData: $customData ) { __typename triggerInfo { __typename activate surveyId activateParam { __typename delay } customizationParam { __typename overlay { __typename active color blur { __typename active number } } } } } }"#
       ))
@@ -47,8 +47,8 @@ extension ToldAPI {
       let __data: DataDict
       init(_dataDict: DataDict) { __data = _dataDict }
 
-      static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Mutation }
-      static var __selections: [ApolloAPI.Selection] { [
+      static var __parentType: Apollo.ParentType { ToldAPI.Objects.Mutation }
+      static var __selections: [Apollo.Selection] { [
         .field("addCustomEvent", AddCustomEvent?.self, arguments: [
           "anonymousID": .variable("anonymousId"),
           "name": .variable("name"),
@@ -68,8 +68,8 @@ extension ToldAPI {
         let __data: DataDict
         init(_dataDict: DataDict) { __data = _dataDict }
 
-        static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.EventData }
-        static var __selections: [ApolloAPI.Selection] { [
+        static var __parentType: Apollo.ParentType { ToldAPI.Objects.EventData }
+        static var __selections: [Apollo.Selection] { [
           .field("__typename", String.self),
           .field("triggerInfo", TriggerInfo.self),
         ] }
@@ -83,8 +83,8 @@ extension ToldAPI {
           let __data: DataDict
           init(_dataDict: DataDict) { __data = _dataDict }
 
-          static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.TriggerInfo }
-          static var __selections: [ApolloAPI.Selection] { [
+          static var __parentType: Apollo.ParentType { ToldAPI.Objects.TriggerInfo }
+          static var __selections: [Apollo.Selection] { [
             .field("__typename", String.self),
             .field("activate", Bool?.self),
             .field("surveyId", ToldAPI.ID?.self),
@@ -104,8 +104,8 @@ extension ToldAPI {
             let __data: DataDict
             init(_dataDict: DataDict) { __data = _dataDict }
 
-            static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.TriggerActivateParam }
-            static var __selections: [ApolloAPI.Selection] { [
+            static var __parentType: Apollo.ParentType { ToldAPI.Objects.TriggerActivateParam }
+            static var __selections: [Apollo.Selection] { [
               .field("__typename", String.self),
               .field("delay", Int?.self),
             ] }
@@ -120,8 +120,8 @@ extension ToldAPI {
             let __data: DataDict
             init(_dataDict: DataDict) { __data = _dataDict }
 
-            static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.TriggerCustomizationParam }
-            static var __selections: [ApolloAPI.Selection] { [
+            static var __parentType: Apollo.ParentType { ToldAPI.Objects.TriggerCustomizationParam }
+            static var __selections: [Apollo.Selection] { [
               .field("__typename", String.self),
               .field("overlay", Overlay?.self),
             ] }
@@ -135,8 +135,8 @@ extension ToldAPI {
               let __data: DataDict
               init(_dataDict: DataDict) { __data = _dataDict }
 
-              static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.SurveyOverlay }
-              static var __selections: [ApolloAPI.Selection] { [
+              static var __parentType: Apollo.ParentType { ToldAPI.Objects.SurveyOverlay }
+              static var __selections: [Apollo.Selection] { [
                 .field("__typename", String.self),
                 .field("active", Bool?.self),
                 .field("color", String?.self),
@@ -154,8 +154,8 @@ extension ToldAPI {
                 let __data: DataDict
                 init(_dataDict: DataDict) { __data = _dataDict }
 
-                static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.SurveyOverlayBlur }
-                static var __selections: [ApolloAPI.Selection] { [
+                static var __parentType: Apollo.ParentType { ToldAPI.Objects.SurveyOverlayBlur }
+                static var __selections: [Apollo.Selection] { [
                   .field("__typename", String.self),
                   .field("active", Bool?.self),
                   .field("number", Int?.self),

@@ -1,7 +1,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import ApolloAPI
+import Apollo
 
 extension ToldAPI {
   enum EventName: String, EnumType {
