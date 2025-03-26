@@ -35,6 +35,16 @@ final class ToldCore {
         local.remove(.lastPage)
         local.remove(.currentSurvey)
         logger.log(level: .info, message: "Told initialized")
+        Task {
+            do {
+                try await withCurrentTask { [weak self] in
+                    guard let self else { return }
+                    try await self.checkIfAppIsAllowed()
+                }
+            } catch {
+                return
+            }
+        }
     }
 
     func activateScreenTracker() {

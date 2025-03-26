@@ -70,7 +70,7 @@ struct DebugView: View {
                 Toggle("Debug", isOn: $debug)
                 Button("Init") {
                     if let configuration = createConfiguration() {
-                        Told.init(configuration, debug: debug)
+                        Told.initSDK(configuration, debug: debug)
                         isAlreadyInitialized = true
                     }
                 }

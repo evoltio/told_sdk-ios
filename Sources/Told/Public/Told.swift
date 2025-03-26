@@ -24,7 +24,7 @@ public final class Told {
     ///    - logHandler: Your custom `LogHandler` implemantion, `nil` by default
     ///    If nil the default implemenation will be use
     ///    - debug: Enable the debugging log, `false`by default
-    public static func `init`(
+    public static func initSDK(
         _ configuration: ToldConfiguration,
         logHandler: (any LogHandler)? = nil,
         debug: Bool = false
