@@ -27,6 +27,12 @@ extension ToldEnvironment {
         widgetUrl: URL(string: "https://widget.told.club")!
     )
 
+    /// The `ToldEnvironment` preproduction
+    public static let preproduction: ToldEnvironment = .init(
+        serverUrl: URL(string: "https://preprodapi.told.club/graphql")!,
+        widgetUrl: URL(string: "https://preprodwidget.told.club")!
+    )
+
     /// The `ToldEnvironment` development
     public static let development: ToldEnvironment = .init(
         serverUrl: URL(string: "https://testapi.told.club/graphql")!,

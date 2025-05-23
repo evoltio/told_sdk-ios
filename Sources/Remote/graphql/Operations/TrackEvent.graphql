@@ -1,5 +1,5 @@
-mutation TrackEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput) {
-    addEvent(anonymousID: $anonymousId, name: $name, sourceID: $sourceId, primaryData: $primaryData) {
+mutation TrackEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput, $preview: Boolean) {
+    addEvent(anonymousID: $anonymousId, name: $name, sourceID: $sourceId, primaryData: $primaryData, preview: $preview) {
         triggerInfo {
             activate
             surveyId
@@ -20,8 +20,8 @@ mutation TrackEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $prim
     }
 }
 
-mutation TrackCustomEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput, $customName: String!, $customData: JSON) {
-    addCustomEvent(anonymousID: $anonymousId, name: $name, sourceID: $sourceId, primaryData: $primaryData, customName: $customName, customData: $customData) {
+mutation TrackCustomEvent($anonymousId: UUID, $name: EventName!, $sourceId: ID!, $primaryData: PrimaryEventDataInput, $customName: String!, $customData: JSON, $preview: Boolean) {
+    addCustomEvent(anonymousID: $anonymousId, name: $name, sourceID: $sourceId, primaryData: $primaryData, customName: $customName, customData: $customData, preview: $preview) {
         triggerInfo {
             activate
             surveyId

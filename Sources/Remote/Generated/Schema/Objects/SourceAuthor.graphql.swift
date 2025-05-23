@@ -4,8 +4,9 @@
 import ApolloAPI
 
 extension ToldAPI.Objects {
-  static let Author = ApolloAPI.Object(
-    typename: "Author",
-    implementedInterfaces: []
+  static let SourceAuthor = ApolloAPI.Object(
+    typename: "SourceAuthor",
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

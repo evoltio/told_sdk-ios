@@ -13,7 +13,8 @@ extension RemoteService {
     func checkIfAppIsAllowed(
         sourceId: SourceId,
         applicationId: String,
-        hostName: String
+        hostName: String,
+        preview: Bool
     ) async throws -> Bool {
         let graphQLResult: GraphQLResult<ToldAPI.CheckIfAppIsAllowedQuery.Data>
         do {
@@ -30,7 +31,8 @@ extension RemoteService {
                             app: .some(applicationId),
                             os: .some(ToldAPI.OS.ios.rawValue)
                         )
-                    )
+                    ),
+                    preview: .some(preview)
                 )
             )
         } catch {

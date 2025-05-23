@@ -1,3 +1,3 @@
-mutation IdentifySourceAuthorByAnonymousID($anonymousID: UUID!, $sourceID: ID!, $customData: JSON!) {
-    identifySourceAuthorByAnonymousID(anonymousID: $anonymousID, sourceID: $sourceID, customData: $customData)
+mutation IdentifySourceAuthorByAnonymousID($anonymousID: UUID!, $sourceID: ID!, $customData: JSON!, $preview: Boolean) {
+    identifySourceAuthorByAnonymousID(anonymousID: $anonymousID, sourceID: $sourceID, customData: $customData, preview: $preview)
 }

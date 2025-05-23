@@ -14,7 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/apollographql/apollo-ios.git", from: "1.15.3"),
+        .package(url: "https://github.com/apollographql/apollo-ios.git", from: "1.21.0"),
     ],
     targets: [
         .target(

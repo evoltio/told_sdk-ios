@@ -533,6 +533,10 @@ type Query {
 
   getSourceAuthorFieldValue(sourceID: ID!, field: String!, offset: Int, limit: Int, sort: DefaultSortEnum, search: String): [String]
 
+  getEveryVersionAvailable(sourceID: ID!): [String]
+
+  getListSourceAuthorFromCompany(companyID: ID!): [SourceAuthor]
+
   getSurveyReportSections(surveyReportID: ID!): [SurveyReportSection]
 
   getSurveyReportSectionsForExport(surveyReportID: ID!): [SurveyReportSection]
@@ -560,6 +564,8 @@ type Query {
   getProjectsFromTeam(teamID: ID!): [Folder]
 
   getFolderBySurvey(surveyID: ID!): Folder
+
+  getFolderIDBySurvey(surveyID: ID!): ID
 
   getFolderList(offset: Int, limit: Int): ListFolderAdmin
 
@@ -661,6 +667,8 @@ type Query {
 
   getListEvents(sourceID: ID!, offset: Int, limit: Int, filters: EventFilters): [Event]
 
+  getNumberOfEvents(sourceID: ID, sourceAuthorID: ID, name: EventName): Int
+
   getActivationGraph: ActivationGraph
 
   getEmailSettings: EmailSettings
@@ -671,14 +679,45 @@ type Query {
 
   getFilterTypes: [FilterType]
 
-  getSourceAuthorField(sourceID: ID!): ConfigCustomData
+  getSourceAuthorField(sourceID: ID!, customType: ConfigCustomDataType!): ConfigCustomData
 
-  getCompanySourceAuthorField(sourceID: ID!): ConfigCustomData
-
-  getCompanySourceAuthorFieldValue(sourceID: ID!, field: String!): [String]
+  getCompanySourceAuthorFieldValue(sourceID: ID!, customType: ConfigCustomDataType!, field: String!): [String]
 
   getCustomEventField(sourceID: ID!, name: String!): ConfigCustomData
+
+  getSourceAuthorCompany(id: ID!): SourceAuthorCompany
+
+  getListSourceAuthorCompany(sourceID: ID!, sort: SourceAuthorCompanySort, offset: Int, limit: Int): ListSourceAuthorCompany
+
+  getListSourceAuthorCompanyByAuthor(sourceAuthorID: ID!): [SourceAuthorCompany]
+
+  getSourceAuthorCompanyFieldValue(sourceID: ID!, field: String!, offset: Int, limit: Int, sort: DefaultSortEnum, search: String): [String]
 }
+
+"""
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
+"""
+scalar String
+
+"""
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+"""
+scalar ID
+
+"""
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+"""
+scalar Int
+
+"""
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+"""
+scalar Float
+
+"""
+The `Boolean` scalar type represents `true` or `false`.
+"""
+scalar Boolean
 
 type Mutation {
   _empty: String
@@ -695,7 +734,7 @@ type Mutation {
 
   removeWebhook(webhookID: ID!): Boolean
 
-  getAuthor(anonymousID: UUID, hiddenFields: [hiddenFieldInput]): Author!
+  getAuthorInAuthor(anonymousID: UUID, hiddenFields: [hiddenFieldInput]): Author!
 
   signup(email: String!, password: String!, firstName: String, lastName: String, language: String, unsubscribed: Boolean): UserToken
 
@@ -823,7 +862,7 @@ type Mutation {
 
   removeSurveyQuestionContactInfoField(id: ID!): Boolean
 
-  createOtherChoiceText(questionID: ID!, content: [SurveyContentWithLanguageInput], anonymousID: UUID, preview: Boolean): SurveyChoiceText
+  createOtherChoiceText(questionID: ID!, content: [SurveyContentWithLanguageInput], surveyAuthorID: ID!, preview: Boolean): SurveyChoiceText
 
   addSurveyChoiceText(questionID: ID!, content: [SurveyContentWithLanguageInput], position: Int): SurveyChoiceText
 
@@ -847,7 +886,7 @@ type Mutation {
 
   deleteMyPreviewSurveyAnswer(surveyID: ID!, surveyAuthorID: ID!): Boolean
 
-  deleteUserAllSurveyAnswer(surveyID: ID!, authorID: String!): Boolean
+  deleteUserAllSurveyAnswer(surveyID: ID!, authorID: ID!): Boolean
 
   updateSurveyAuthorConfidentiality(surveyAuthorID: ID!, preview: Boolean, questionID: ID, status: SurveyAuthorConfidentialityStatus!): SurveyAuthor
 
@@ -857,9 +896,9 @@ type Mutation {
 
   saveSurveyReport(id: ID!, cover: SurveyReportCoverInput, color: SurveyReportColorInput, title: String, filters: [FilterInput], sections: [SurveyReportSectionUpdateInput], iconColor: String): SurveyReportWithSections
 
-  updateSurveyReport(id: ID!, cover: SurveyReportCoverInput, color: SurveyReportColorInput, title: String, filters: [FilterInput], iconColor: String, isPublic: Boolean): SurveyReport
+  updateSurveyReport(id: ID!, displayHiddenFields: Boolean, cover: SurveyReportCoverInput, color: SurveyReportColorInput, title: String, filters: [FilterInput], iconColor: String, isPublic: Boolean): SurveyReport
 
-  getCalcSurveyReport(id: ID, surveyID: ID, conditionType: AudienceConditionType, filters: [FilterInput]): ProcessingSurveyReportWithSections
+  getCalcSurveyReport(id: ID, jobID: String!, surveyID: ID, conditionType: AudienceConditionType, filters: [FilterInput]): ProcessingSurveyReportWithSections
 
   duplicateSurveyReport(id: ID!): SurveyReport
 
@@ -869,11 +908,13 @@ type Mutation {
 
   updateHiddenFieldsSourceAuthor(id: ID!, hiddenFields: JSON!): SourceAuthor
 
-  identifySourceAuthor(id: ID!, customData: JSON!): SourceAuthor
+  identifySourceAuthor(id: ID!, sourceID: ID!, customData: JSON!, preview: Boolean): SourceAuthor
 
-  identifySourceAuthorByAnonymousID(anonymousID: UUID!, sourceID: ID!, customData: JSON!): UUID
+  identifySourceAuthorByAnonymousID(anonymousID: UUID!, sourceID: ID!, customData: JSON!, preview: Boolean): UUID
 
-  deleteSourceAuthor(ids: [String!]!): Boolean
+  deleteSourceAuthor(ids: [ID], sourceID: ID): Boolean
+
+  getAuthor(anonymousID: UUID, sourceID: ID!, hiddenFields: [hiddenFieldInput], preview: Boolean): SourceAuthor!
 
   updateReportSection(id: ID!, graphType: String, display: Boolean): SurveyReportSection
 
@@ -947,11 +988,11 @@ type Mutation {
 
   updateTeam(id: ID!, name: String, image: String): Team
 
-  editTeamByAdmin(id: ID!, name: String, plan: ID): Team
+  editTeamByAdmin(id: ID!, name: String, plan: ID, status: String): Team
 
   inviteToTeam(id: ID!, list: [String]!, roleName: roleTeamName!): Team
 
-  inviteToTeamByAdmin(id: ID!, email: String, roleName: roleTeamName!): Team
+  inviteToTeamByAdmin(id: ID!, email: String!, roleName: roleTeamName!): Team
 
   changeRoleInTeam(id: ID!, list: [String]!, roleName: roleTeamName!): Team
 
@@ -987,15 +1028,15 @@ type Mutation {
 
   deleteTagByName(name: String!): Boolean
 
-  addEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput): EventData
+  addEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, preview: Boolean): EventData
 
-  addClickEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, classNames: [String], htmlId: String, text: String): EventData
+  addClickEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, classNames: [String], htmlId: String, text: String, preview: Boolean): EventData
 
-  addCustomEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, customName: String!, customData: JSON): EventData
+  addCustomEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, customName: String!, customData: JSON, preview: Boolean): EventData
 
-  addDelayEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, delayValue: Int): EventData
+  addDelayEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, delayValue: Int, preview: Boolean): EventData
 
-  addScrollEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, scrollValue: Int): EventData
+  addScrollEvent(anonymousID: UUID, name: EventName!, sourceID: ID!, primaryData: PrimaryEventDataInput, scrollValue: Int, preview: Boolean): EventData
 
   updateEmailSettings(id: ID!, unsubscribed: Boolean, list: [EmailSourceInput]): EmailSettings
 
@@ -1007,7 +1048,17 @@ type Mutation {
 
   deleteAudience(id: ID!): Boolean
 
-  calcAudience(id: ID!, conditionType: AudienceConditionType, filters: [FilterInput], offset: Int, limit: Int, sort: CalcAudienceSort, search: [CalcAudienceSearch]): ProcessingAudience
+  calcAudience(id: ID!, jobId: String!, conditionType: AudienceConditionType, filters: [FilterInput], offset: Int, limit: Int, sort: CalcAudienceSort, search: [CalcAudienceSearch]): ProcessingAudience
+
+  importSourceAuthorAudience(sourceID: ID!, data: JSON!, jobId: String): ProcessingImport
+
+  importSourceAuthorCompanyAudience(sourceID: ID!, data: JSON!, jobId: String): ProcessingImport
+
+  mergeSourceAuthorAudience(sourceID: ID!, list: [DataToMerge], jobId: String): ProcessingImport
+
+  mergeSourceAuthorCompanyAudience(sourceID: ID!, list: [DataToMerge], jobId: String): ProcessingImport
+
+  createSourceAuthorCompany(sourceID: ID!, anonymousID: UUID!, groupId: String!, sourceAuthorInfo: String, customData: JSON, preview: Boolean): SourceAuthorCompany
 }
 
 type Subscription {
@@ -1045,7 +1096,7 @@ type Subscription {
 
   onSurveyReportUpdated(id: ID!): SurveyReportWithSections
 
-  onSurveyReportCalcProcessed(id: ID!): ProcessingSurveyReportWithSections
+  onSurveyReportCalcProcessed(id: String!): ProcessingSurveyReportWithSections
 
   onDownloadSurveyReportExcel(id: ID!): ProcessingDownloadSurveyReportExcel
 
@@ -1069,7 +1120,9 @@ type Subscription {
 
   onEventAdded(sourceID: ID!): Event
 
-  onAudienceCalcProcessed(id: ID!): ProcessingAudience
+  onAudienceCalcProcessed(id: String!): ProcessingAudience
+
+  onAudienceImportProcessed(id: String!): ProcessingImport
 }
 
 type OpenQuestion {
@@ -2923,6 +2976,8 @@ type SurveyAuthorWithAnswers {
 
   surveyName: String
 
+  surveyToldie: String
+
   testerUrl: String
 
   userInfos: UserInfos
@@ -3049,11 +3104,15 @@ type SurveyReport {
 
   survey: ID
 
+  displayHiddenFields: Boolean
+
   filters: [Filter]
 }
 
 type SurveyReportWithSections {
   id: ID!
+
+  displayHiddenFields: Boolean
 
   customization: SurveyReportCustomization
 
@@ -3147,9 +3206,13 @@ input hiddenFieldInput {
 type SourceAuthor {
   id: ID
 
-  author: ID
-
   source: ID
+
+  userId: String
+
+  anonymousID: String
+
+  version: String
 
   name: String
 
@@ -3168,6 +3231,8 @@ type SourceAuthor {
   createdAt: Date
 
   updatedAt: Date
+
+  resultNPS: Int
 }
 
 enum SourceAuthorTypeEvent {
@@ -3210,14 +3275,26 @@ interface SurveyReportSection {
   display: Boolean
 }
 
+type AuthorForSection {
+  id: ID
+
+  name: String
+
+  customData: JSON
+
+  resultNPS: Int
+
+  surveyAuthor: ID
+}
+
 type SurveyReportAnswer {
-  surveyAuthor: SurveyAuthor
+  sourceAuthor: AuthorForSection
 
   answer: SurveyAnswer
 }
 
 type SurveyReportMultiAnswer {
-  surveyAuthor: SurveyAuthor
+  sourceAuthor: SourceAuthor
 
   answers: [SurveyAnswer]
 }
@@ -4152,6 +4229,8 @@ type Team {
   moreInfos: MoreInfosTeam
 
   trialEndSoon: Boolean
+
+  status: String
 }
 
 type Teams {
@@ -4264,6 +4343,8 @@ type TeamRights {
   delete: Boolean
 
   manage: Boolean
+
+  managePlan: Boolean
 }
 
 type ProjectRights {
@@ -4420,6 +4501,10 @@ enum EventName {
   IDENTIFY
 
   RESET
+
+  START_SESSION
+
+  GROUP
 }
 
 enum OS {
@@ -4490,6 +4575,22 @@ type DefaultEvent implements Event {
   primaryData: PrimaryEventData
 
   createdAt: Float
+}
+
+type GroupEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  sourceAuthorCompany: SourceAuthorCompany
 }
 
 type AnswerEvent implements Event {
@@ -4580,6 +4681,22 @@ type ScrollEvent implements Event {
   createdAt: Float
 
   scrollValue: Int
+}
+
+type SessionStartEvent implements Event {
+  id: ID!
+
+  name: EventName!
+
+  source: ID
+
+  sourceAuthor: ID
+
+  primaryData: PrimaryEventData
+
+  createdAt: Float
+
+  dateLastPing: Date
 }
 
 type triggerActivateParam {
@@ -4732,6 +4849,34 @@ input CalcAudienceSearch {
   value: String
 }
 
+type AuthorToUpdate {
+  id: ID
+
+  data: JSON
+}
+
+type ResImport {
+  numberTreated: Int
+
+  numberCreated: Int
+
+  listToUpdate: [AuthorToUpdate]
+}
+
+input DataToMerge {
+  id: ID
+
+  data: JSON
+}
+
+type ProcessingImport {
+  jobId: String
+
+  status: String
+
+  res: ResImport
+}
+
 interface Filter {
   id: ID!
 
@@ -4836,6 +4981,34 @@ enum DateFilterConditionType {
   between
 
   outside
+
+  last
+
+  xtd
+}
+
+enum DateFilterXtdPeriod {
+  day
+
+  week
+
+  month
+
+  quarter
+
+  year
+}
+
+enum DateFilterLastPeriod {
+  minute
+
+  hour
+
+  day
+
+  week
+
+  month
 }
 
 type DateEventFilter implements Filter {
@@ -4848,6 +5021,12 @@ type DateEventFilter implements Filter {
   endDate: Date
 
   conditionType: DateFilterConditionType
+
+  xtdPeriod: DateFilterXtdPeriod
+
+  lastPeriod: DateFilterLastPeriod
+
+  lastValue: Int
 }
 
 enum DelayEventFilterConditionType {
@@ -4876,6 +5055,14 @@ enum PropsFilterConditionType {
   notEqual
 
   any
+
+  exists
+
+  notExists
+
+  contain
+
+  notContain
 }
 
 type PropsFilter implements Filter {
@@ -4890,6 +5077,100 @@ type PropsFilter implements Filter {
   conditionType: PropsFilterConditionType!
 
   propsValue: [String]
+}
+
+enum LanguageFilterConditionType {
+  notAny
+
+  any
+}
+
+type LanguageFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: LanguageFilterConditionType!
+
+  propsValue: [String]
+}
+
+enum NameFilterConditionType {
+  equal
+}
+
+type NameFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: NameFilterConditionType!
+
+  name: String
+}
+
+enum DeviceTypeFilterConditionType {
+  notAny
+
+  any
+}
+
+type DeviceTypeFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: DeviceTypeFilterConditionType!
+
+  propsValue: [String]
+}
+
+enum OSFilterConditionType {
+  notAny
+
+  any
+}
+
+type OSFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: OSFilterConditionType!
+
+  propsValue: [String]
+}
+
+enum NumberSessionFilterConditionType {
+  moreEqualExists
+
+  lessExists
+}
+
+type NumberSessionFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: NumberSessionFilterConditionType!
+
+  numberSession: Int
+}
+
+enum VersionFilterConditionType {
+  moreEqualExists
+
+  lessExists
+}
+
+type VersionFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: VersionFilterConditionType!
+
+  version: String
 }
 
 enum ScrollEventFilterConditionType {
@@ -4948,12 +5229,34 @@ type UrlEventFilter implements Filter {
   urlValue: String
 }
 
+enum SessionStartEventFilterConditionType {
+  moreEqualExists
+
+  lessExists
+}
+
+type SessionStartEventFilter implements Filter {
+  id: ID!
+
+  kind: String!
+
+  conditionType: SessionStartEventFilterConditionType!
+
+  sessionStart: Int
+
+  beginDate: Date
+
+  endDate: Date
+}
+
 enum FilterConditionTypeInput {
   equal
 
   notEqual
 
   any
+
+  notAny
 
   contain
 
@@ -4976,6 +5279,10 @@ enum FilterConditionTypeInput {
   between
 
   outside
+
+  last
+
+  xtd
 }
 
 enum FilterInputType {
@@ -4998,6 +5305,20 @@ enum FilterInputType {
   UrlEventFilter
 
   DefaultFilter
+
+  LanguageFilter
+
+  NumberSessionFilter
+
+  DeviceTypeFilter
+
+  OSFilter
+
+  NameFilter
+
+  VersionFilter
+
+  SessionStartEventFilter
 }
 
 input FilterInput {
@@ -5029,6 +5350,12 @@ input FilterInput {
 
   endDate: Date
 
+  xtdPeriod: DateFilterXtdPeriod
+
+  lastPeriod: DateFilterLastPeriod
+
+  lastValue: Int
+
   delayValue: Int
 
   typeOrigin: PropsFilterTypeOrigin
@@ -5044,6 +5371,14 @@ input FilterInput {
   urlField: UrlEventFilterUrlField
 
   urlValue: String
+
+  numberSession: Int
+
+  name: String
+
+  version: String
+
+  sessionStart: Int
 }
 
 type FilterType {
@@ -5090,6 +5425,38 @@ type ConfigCustomData {
   eventName: String
 
   config: [ConfigCustomDataTypeConfig]
+}
+
+enum SortOrder {
+  ASC
+
+  DESC
+}
+
+type ListSourceAuthorCompany {
+  nbTotal: Int
+
+  sourceAuthorCompanyList: [SourceAuthorCompany]
+}
+
+type SourceAuthorCompany {
+  id: ID
+
+  customData: JSON
+
+  groupSize: Int
+
+  groupId: String
+
+  source: ID
+
+  createdAt: Date
+}
+
+input SourceAuthorCompanySort {
+  field: String
+
+  typeSort: SortOrder
 }
 
 """

@@ -6,6 +6,7 @@ import ApolloAPI
 extension ToldAPI.Objects {
   static let CheckIfAppIsAllowed = ApolloAPI.Object(
     typename: "CheckIfAppIsAllowed",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

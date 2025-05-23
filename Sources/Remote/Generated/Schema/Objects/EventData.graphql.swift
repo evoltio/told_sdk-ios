@@ -6,6 +6,7 @@ import ApolloAPI
 extension ToldAPI.Objects {
   static let EventData = ApolloAPI.Object(
     typename: "EventData",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

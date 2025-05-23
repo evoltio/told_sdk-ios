@@ -6,6 +6,7 @@ import ApolloAPI
 extension ToldAPI.Objects {
   static let Mutation = ApolloAPI.Object(
     typename: "Mutation",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

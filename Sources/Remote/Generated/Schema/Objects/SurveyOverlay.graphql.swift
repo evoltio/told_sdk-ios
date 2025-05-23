@@ -6,6 +6,7 @@ import ApolloAPI
 extension ToldAPI.Objects {
   static let SurveyOverlay = ApolloAPI.Object(
     typename: "SurveyOverlay",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

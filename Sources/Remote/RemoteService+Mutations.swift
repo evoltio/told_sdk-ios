@@ -10,13 +10,18 @@ import Apollo
 
 extension RemoteService {
 
-    func getAnonymousId() async throws -> AnonymousId {
+    func getAnonymousId(
+        sourceId: SourceId,
+        preview: Bool
+    ) async throws -> AnonymousId {
         let graphQLResult: GraphQLResult<ToldAPI.GetAnonymousIdMutation.Data>
         do {
             graphQLResult = try await apolloClient.performAsync(
                 mutation: ToldAPI.GetAnonymousIdMutation(
                     anonymousId: .none,
-                    hiddenFields: .none
+                    sourceId: sourceId,
+                    hiddenFields: .none,
+                    preview: .some(preview)
                 )
             )
         } catch {
@@ -32,7 +37,8 @@ extension RemoteService {
     func identify(
         anonymousId: AnonymousId,
         sourceId: SourceId,
-        customData: [String: AnyHashable]
+        customData: [String: AnyHashable],
+        preview: Bool
     ) async throws -> String? {
         let graphQLResult: GraphQLResult<ToldAPI.IdentifySourceAuthorByAnonymousIDMutation.Data>
         do {
@@ -40,7 +46,8 @@ extension RemoteService {
                 mutation: ToldAPI.IdentifySourceAuthorByAnonymousIDMutation(
                     anonymousID: anonymousId,
                     sourceID: sourceId,
-                    customData: ToldAPI.JSON.init(_jsonValue: customData)
+                    customData: ToldAPI.JSON.init(_jsonValue: customData),
+                    preview: .some(preview)
                 )
             )
         } catch {
@@ -52,13 +59,15 @@ extension RemoteService {
     func trackIdentify(
         anonymousId: AnonymousId,
         sourceId: SourceId,
-        primaryData: PrimaryEventData
+        primaryData: PrimaryEventData,
+        preview: Bool
     ) async throws {
         try await trackEvent(
             anonymousId: anonymousId,
             sourceId: sourceId,
             primaryData: primaryData,
-            eventName: .identify
+            eventName: .identify,
+            preview: preview
         )
     }
 
@@ -67,7 +76,8 @@ extension RemoteService {
         sourceId: SourceId,
         customName: String,
         customData: [String: AnyHashable],
-        primaryData: PrimaryEventData
+        primaryData: PrimaryEventData,
+        preview: Bool
     ) async throws -> TrackEventResult {
         let graphQLResult: GraphQLResult<ToldAPI.TrackCustomEventMutation.Data>
         do {
@@ -78,7 +88,8 @@ extension RemoteService {
                     sourceId: sourceId,
                     primaryData: .some(ToldAPI.PrimaryEventDataInput(primaryData)),
                     customName: customName,
-                    customData: .some(ToldAPI.JSON(_jsonValue: customData))
+                    customData: .some(ToldAPI.JSON(_jsonValue: customData)),
+                    preview: .some(preview)
                 )
             )
         } catch {
@@ -102,13 +113,15 @@ extension RemoteService {
     func trackChangePage(
         anonymousId: AnonymousId,
         sourceId: SourceId,
-        primaryData: PrimaryEventData
+        primaryData: PrimaryEventData,
+        preview: Bool
     ) async throws -> TrackEventResult {
         let data: ToldAPI.TrackEventMutation.Data = try await trackEvent(
             anonymousId: anonymousId,
             sourceId: sourceId,
             primaryData: primaryData,
-            eventName: .changePage
+            eventName: .changePage,
+            preview: preview
         )
         if let triggerInfo = data.addEvent?.triggerInfo, triggerInfo.activate == true {
             guard let surveyId = triggerInfo.surveyId else {
@@ -126,26 +139,30 @@ extension RemoteService {
     func trackCloseSurvey(
         anonymousId: AnonymousId,
         sourceId: SourceId,
-        primaryData: PrimaryEventData
+        primaryData: PrimaryEventData,
+        preview: Bool
     ) async throws {
         try await trackEvent(
             anonymousId: anonymousId,
             sourceId: sourceId,
             primaryData: primaryData,
-            eventName: .closeSurvey
+            eventName: .closeSurvey,
+            preview: preview
         )
     }
 
     func reset(
         anonymousId: AnonymousId,
         sourceId: SourceId,
-        primaryData: PrimaryEventData
+        primaryData: PrimaryEventData,
+        preview: Bool
     ) async throws {
         try await trackEvent(
             anonymousId: anonymousId,
             sourceId: sourceId,
             primaryData: primaryData,
-            eventName: .reset
+            eventName: .reset,
+            preview: preview
         )
     }
 
@@ -154,7 +171,8 @@ extension RemoteService {
         anonymousId: AnonymousId,
         sourceId: SourceId,
         primaryData: PrimaryEventData,
-        eventName: ToldAPI.EventName
+        eventName: ToldAPI.EventName,
+        preview: Bool
     ) async throws -> ToldAPI.TrackEventMutation.Data {
         let graphQLResult:  GraphQLResult<ToldAPI.TrackEventMutation.Data>
         do {
@@ -165,7 +183,8 @@ extension RemoteService {
                     sourceId: sourceId,
                     primaryData: .some(
                         ToldAPI.PrimaryEventDataInput(primaryData)
-                    )
+                    ),
+                    preview: .some(preview)
                 )
             )
         } catch {

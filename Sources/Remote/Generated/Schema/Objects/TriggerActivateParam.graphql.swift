@@ -6,6 +6,7 @@ import ApolloAPI
 extension ToldAPI.Objects {
   static let TriggerActivateParam = ApolloAPI.Object(
     typename: "triggerActivateParam",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

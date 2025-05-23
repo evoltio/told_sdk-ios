@@ -16,8 +16,6 @@ protocol ToldAPI_MutableInlineFragment: ApolloAPI.MutableSelectionSet & ApolloAP
 where Schema == ToldAPI.SchemaMetadata {}
 
 extension ToldAPI {
-  typealias ID = String
-
   typealias SelectionSet = ToldAPI_SelectionSet
 
   typealias InlineFragment = ToldAPI_InlineFragment
@@ -27,21 +25,21 @@ extension ToldAPI {
   typealias MutableInlineFragment = ToldAPI_MutableInlineFragment
 
   enum SchemaMetadata: ApolloAPI.SchemaMetadata {
-    static let configuration: ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
+    static let configuration: any ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
 
     static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
       switch typename {
-      case "Query": return ToldAPI.Objects.Query
       case "CanUseSurvey": return ToldAPI.Objects.CanUseSurvey
+      case "CheckIfAppIsAllowed": return ToldAPI.Objects.CheckIfAppIsAllowed
+      case "EventData": return ToldAPI.Objects.EventData
+      case "Mutation": return ToldAPI.Objects.Mutation
+      case "Query": return ToldAPI.Objects.Query
+      case "SourceAuthor": return ToldAPI.Objects.SourceAuthor
       case "SurveyOverlay": return ToldAPI.Objects.SurveyOverlay
       case "SurveyOverlayBlur": return ToldAPI.Objects.SurveyOverlayBlur
-      case "Mutation": return ToldAPI.Objects.Mutation
-      case "EventData": return ToldAPI.Objects.EventData
       case "TriggerInfo": return ToldAPI.Objects.TriggerInfo
       case "triggerActivateParam": return ToldAPI.Objects.TriggerActivateParam
       case "triggerCustomizationParam": return ToldAPI.Objects.TriggerCustomizationParam
-      case "CheckIfAppIsAllowed": return ToldAPI.Objects.CheckIfAppIsAllowed
-      case "Author": return ToldAPI.Objects.Author
       default: return nil
       }
     }

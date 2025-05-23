@@ -47,7 +47,7 @@ extension ToldAPI {
       let __data: DataDict
       init(_dataDict: DataDict) { __data = _dataDict }
 
-      static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.Query }
+      static var __parentType: any ApolloAPI.ParentType { ToldAPI.Objects.Query }
       static var __selections: [ApolloAPI.Selection] { [
         .field("checkIfCanUseWidgetWithSurvey", CheckIfCanUseWidgetWithSurvey?.self, arguments: [
           "surveyID": .variable("surveyID"),
@@ -68,7 +68,7 @@ extension ToldAPI {
         let __data: DataDict
         init(_dataDict: DataDict) { __data = _dataDict }
 
-        static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.CanUseSurvey }
+        static var __parentType: any ApolloAPI.ParentType { ToldAPI.Objects.CanUseSurvey }
         static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
           .field("canUse", Bool?.self),
@@ -85,7 +85,7 @@ extension ToldAPI {
           let __data: DataDict
           init(_dataDict: DataDict) { __data = _dataDict }
 
-          static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.SurveyOverlay }
+          static var __parentType: any ApolloAPI.ParentType { ToldAPI.Objects.SurveyOverlay }
           static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
             .field("active", Bool?.self),
@@ -104,7 +104,7 @@ extension ToldAPI {
             let __data: DataDict
             init(_dataDict: DataDict) { __data = _dataDict }
 
-            static var __parentType: ApolloAPI.ParentType { ToldAPI.Objects.SurveyOverlayBlur }
+            static var __parentType: any ApolloAPI.ParentType { ToldAPI.Objects.SurveyOverlayBlur }
             static var __selections: [ApolloAPI.Selection] { [
               .field("__typename", String.self),
               .field("number", Int?.self),

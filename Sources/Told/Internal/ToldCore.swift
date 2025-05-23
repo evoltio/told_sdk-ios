@@ -68,7 +68,8 @@ final class ToldCore {
                     let anonymousId: String? = try await remote.identify(
                         anonymousId: getAnonymousId(),
                         sourceId: configuration.sourceId,
-                        customData: property
+                        customData: property,
+                        preview: configuration.preview
                     )
                     if let anonymousId {
                         local.set(anonymousId, for: .anonymousId)
@@ -89,7 +90,8 @@ final class ToldCore {
             try await remote.trackIdentify(
                 anonymousId: getAnonymousId(),
                 sourceId: configuration.sourceId,
-                primaryData: getPrimaryData()
+                primaryData: getPrimaryData(),
+                preview: configuration.preview
             )
             logger.log(level: .error, message: "TrackIdentify successfully")
         } catch {
@@ -106,7 +108,8 @@ final class ToldCore {
                     try await remote.reset(
                         anonymousId: getAnonymousId(),
                         sourceId: configuration.sourceId,
-                        primaryData: getPrimaryData()
+                        primaryData: getPrimaryData(),
+                        preview: configuration.preview
                     )
                     local.remove(.anonymousId)
                     local.remove(.currentSurvey)
@@ -134,7 +137,8 @@ final class ToldCore {
                     let trackEventResult: TrackEventResult = try await  remote.trackChangePage(
                         anonymousId: getAnonymousId(),
                         sourceId: configuration.sourceId,
-                        primaryData: getPrimaryData()
+                        primaryData: getPrimaryData(),
+                        preview: configuration.preview
                     )
                     try await handleTrackEventResult(trackEventResult)
                 }
@@ -159,7 +163,8 @@ final class ToldCore {
                         customData: properties.merging(languageProperty, uniquingKeysWith: { value, _ in
                             value
                         }),
-                        primaryData: getPrimaryData()
+                        primaryData: getPrimaryData(),
+                        preview: configuration.preview
                     )
                     try await handleTrackEventResult(trackEventResult)
                 }
@@ -178,7 +183,8 @@ final class ToldCore {
                     try await remote.trackCloseSurvey(
                         anonymousId: getAnonymousId(),
                         sourceId: configuration.sourceId,
-                        primaryData: getPrimaryData()
+                        primaryData: getPrimaryData(),
+                        preview: configuration.preview
                     )
                     local.remove(.currentSurvey)
                 }
@@ -257,7 +263,7 @@ final class ToldCore {
             if let anonymousId = local.get(.anonymousId) {
                 return anonymousId
             } else {
-                let anonymousId: String = try await remote.getAnonymousId()
+                let anonymousId: String = try await remote.getAnonymousId(sourceId: configuration.sourceId, preview: configuration.preview)
                 local.set(anonymousId, for: .anonymousId)
                 logger.log(level: .debug, message: "Get AnonymousId: \(anonymousId)")
                 return anonymousId
@@ -296,7 +302,8 @@ final class ToldCore {
                 let isAppAllowed: Bool = try await remote.checkIfAppIsAllowed(
                     sourceId: configuration.sourceId,
                     applicationId: configuration.applicationId,
-                    hostName: configuration.environment.serverUrl.absoluteString
+                    hostName: configuration.environment.serverUrl.absoluteString,
+                    preview: configuration.preview
                 )
                 self.isAppAllowed = isAppAllowed
                 logger.log(level: .debug, message: "This app is \(isAppAllowed ? "allowed" : "not allowed")")

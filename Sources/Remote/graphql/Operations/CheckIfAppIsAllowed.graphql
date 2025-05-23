@@ -1,5 +1,5 @@
-query CheckIfAppIsAllowed($sourceId: ID!, $host: ClientAppWebInput, $mobile: ClientAppMobileInput) {
-  checkIfAppIsAllowed(sourceID: $sourceId, url: $host, mobile: $mobile) {
+query CheckIfAppIsAllowed($sourceId: ID!, $host: ClientAppWebInput, $mobile: ClientAppMobileInput, $preview: Boolean) {
+  checkIfAppIsAllowed(sourceID: $sourceId, url: $host, mobile: $mobile, preview: $preview) {
     allowed
   }
 }

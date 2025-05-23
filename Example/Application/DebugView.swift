@@ -11,6 +11,7 @@ import Told
 
 enum Environment: String, Identifiable, CaseIterable {
     case production
+    case preproduction
     case development
     case custom
 
@@ -24,6 +25,7 @@ struct DebugView: View {
     @State private var selectedEnvironment: Environment = .development
     @State private var serverURL: String = ""
     @State private var widgetURL: String = ""
+    @State private var preview: Bool = false
 
     @State private var addPropertyIdentify: Bool = false
     @State private var propertiesIdentify: [String: AnyHashable] = [:]
@@ -67,6 +69,7 @@ struct DebugView: View {
                         .keyboardType(.URL)
                         .textInputAutocapitalization(.never)
                 }
+                Toggle("Preview", isOn: $preview)
                 Toggle("Debug", isOn: $debug)
                 Button("Init") {
                     if let configuration = createConfiguration() {
@@ -175,6 +178,8 @@ struct DebugView: View {
             environment = .production
         case .development:
             environment = .development
+        case .preproduction:
+            environment = .preproduction
         case .custom:
             if let serverURL = URL(string: serverURL), let widgetURL = URL(string: widgetURL) {
                 environment = .custom(serverUrl: serverURL, widgetUrl: widgetURL)
@@ -193,7 +198,8 @@ struct DebugView: View {
             sourceId: sourceId,
             applicationId: applicationId,
             environment: environment,
-            appVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
+            appVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0",
+            preview: preview
         )
 
     }

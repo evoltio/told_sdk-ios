@@ -6,6 +6,7 @@ import ApolloAPI
 extension ToldAPI.Objects {
   static let CanUseSurvey = ApolloAPI.Object(
     typename: "CanUseSurvey",
-    implementedInterfaces: []
+    implementedInterfaces: [],
+    keyFields: nil
   )
 }

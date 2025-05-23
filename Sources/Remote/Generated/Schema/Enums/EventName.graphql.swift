@@ -16,6 +16,8 @@ extension ToldAPI {
     case closeSurvey = "CLOSE_SURVEY"
     case identify = "IDENTIFY"
     case reset = "RESET"
+    case startSession = "START_SESSION"
+    case group = "GROUP"
   }
 
 }

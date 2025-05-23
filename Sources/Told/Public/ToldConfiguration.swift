@@ -11,6 +11,7 @@ public struct ToldConfiguration {
     let applicationId: String
     let environment: ToldEnvironment
     let appVersion: String
+    let preview: Bool
 
     /// - Parameters:
     ///   - sourceId: The unique identifier for the data source. You can find it on the Told's initialization page of your app.
@@ -21,11 +22,13 @@ public struct ToldConfiguration {
         sourceId: String,
         applicationId: String,
         environment: ToldEnvironment,
-        appVersion: String
+        appVersion: String,
+        preview: Bool = false
     ) {
         self.sourceId = sourceId
         self.applicationId = applicationId
         self.environment = environment
         self.appVersion = appVersion
+        self.preview = preview
     }
 }
