@@ -1,9 +1,9 @@
 PODS:
-  - Apollo (1.15.3):
-    - Apollo/Core (= 1.15.3)
-  - Apollo/Core (1.15.3)
-  - Told (2.0.0):
-    - Apollo (~> 1.15.3)
+  - Apollo (1.21.0):
+    - Apollo/Core (= 1.21.0)
+  - Apollo/Core (1.21.0)
+  - Told (2.1.0):
+    - Apollo (~> 1.21.0)
 
 DEPENDENCIES:
   - Told (from `../`)
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Apollo: a1e120e7ca2c8592056bd39e8032e2e3fed601a6
-  Told: 727938995dd789819b252f08d005b6376d14209f
+  Apollo: d05ea62599e8700dc05f47477986996a8a38786a
+  Told: 79dd19c073403a43fad2984956c15de33dba7523
 
-PODFILE CHECKSUM: f5ba48ef0feaf637745fe9015183469fd761b474
+PODFILE CHECKSUM: 4b50dcb2643347d863d77dee05b9a53dd2c2aeaf
 
 COCOAPODS: 1.16.2

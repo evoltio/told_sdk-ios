@@ -1,18 +1,18 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import ApolloAPI
+import Apollo
 
-protocol ToldAPI_SelectionSet: ApolloAPI.SelectionSet & ApolloAPI.RootSelectionSet
+protocol ToldAPI_SelectionSet: Apollo.SelectionSet & Apollo.RootSelectionSet
 where Schema == ToldAPI.SchemaMetadata {}
 
-protocol ToldAPI_InlineFragment: ApolloAPI.SelectionSet & ApolloAPI.InlineFragment
+protocol ToldAPI_InlineFragment: Apollo.SelectionSet & Apollo.InlineFragment
 where Schema == ToldAPI.SchemaMetadata {}
 
-protocol ToldAPI_MutableSelectionSet: ApolloAPI.MutableRootSelectionSet
+protocol ToldAPI_MutableSelectionSet: Apollo.MutableRootSelectionSet
 where Schema == ToldAPI.SchemaMetadata {}
 
-protocol ToldAPI_MutableInlineFragment: ApolloAPI.MutableSelectionSet & ApolloAPI.InlineFragment
+protocol ToldAPI_MutableInlineFragment: Apollo.MutableSelectionSet & Apollo.InlineFragment
 where Schema == ToldAPI.SchemaMetadata {}
 
 extension ToldAPI {
@@ -24,10 +24,10 @@ extension ToldAPI {
 
   typealias MutableInlineFragment = ToldAPI_MutableInlineFragment
 
-  enum SchemaMetadata: ApolloAPI.SchemaMetadata {
-    static let configuration: any ApolloAPI.SchemaConfiguration.Type = SchemaConfiguration.self
+  enum SchemaMetadata: Apollo.SchemaMetadata {
+    static let configuration: any Apollo.SchemaConfiguration.Type = SchemaConfiguration.self
 
-    static func objectType(forTypename typename: String) -> ApolloAPI.Object? {
+    static func objectType(forTypename typename: String) -> Apollo.Object? {
       switch typename {
       case "CanUseSurvey": return ToldAPI.Objects.CanUseSurvey
       case "CheckIfAppIsAllowed": return ToldAPI.Objects.CheckIfAppIsAllowed
