@@ -20,7 +20,7 @@ To install ToldSDK via SPM, simply add the following URL : `https://github.com/e
 Or in your package.swift
 ```swift
     dependencies: [
-        .package(url: "https://github.com/evoltio/told_sdk-ios.git", from: "2.1.0")
+        .package(url: "https://github.com/evoltio/told_sdk-ios.git", from: "2.1.1")
     ],
     targets: [
         .target(

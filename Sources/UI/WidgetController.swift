@@ -131,11 +131,6 @@ final class WidgetController: UIViewController {
 extension WidgetController: WKScriptMessageHandler {
     private func handleMessage(_ webView: WKWebView, _ message: WebViewMessage) {
         switch message.type {
-        case .isLoaded:
-            //  Use this view to disable hit testing bellow the webView
-            let backgroundView: UIView = .init()
-            backgroundView.frame = view.frame
-            view.insertSubview(backgroundView, belowSubview: webView)
         case .close:
             UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseOut, animations: { [weak self] in
                 guard let self else { return }
@@ -163,9 +158,16 @@ extension WidgetController: WKScriptMessageHandler {
             // The webview is currently hidden
             if firstPosition {
                 webView.frame.size = newSize
-                UIView.animate(withDuration: 0.35) {
+                UIView.animate(withDuration: 0.35, animations: {
                     webView.frame.origin = newOrigin
-                }
+                }, completion: { [weak self] finished in
+                    guard finished else { return }
+                    guard let self else { return }
+                    //  Use this view to disable hit testing bellow the webView
+                    let backgroundView: UIView = .init()
+                    backgroundView.frame = self.view.frame
+                    self.view.insertSubview(backgroundView, belowSubview: webView)
+                })
             } else {
                 UIView.animate(withDuration: 0.35) {
                     webView.frame = .init(
@@ -178,7 +180,7 @@ extension WidgetController: WKScriptMessageHandler {
             openLink(url: url)
         case .closeCalendar:
             dismiss(animated: true)
-        case .updatePosition, .addCookie, .unknown:
+        case .updatePosition, .addCookie, .unknown, .isLoaded:
             break
         }
     }
